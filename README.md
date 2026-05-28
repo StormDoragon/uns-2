@@ -1,29 +1,19 @@
-# Uns
+# Uns (Next.js)
 
-A simple static launch site for **Uns** — a resting place for tired hearts.
+Uns is now a full Next.js app with dynamic dua pages.
 
-## What this project is
-This repository is currently a **static website** (no Next.js runtime required).
-
-Pages:
-- `/` → `index.html`
-- `/duas` → `duas.html` (via Vercel clean URLs)
-
-## Stack
-- Vercel (deploy)
-- Git (version control)
-- ChatGPT (content + build support)
-
-## Local preview
-Open `index.html` directly in your browser, or run a static server:
-
+## Run locally
 ```bash
-python -m http.server 8080
+npm install
+npm run dev
 ```
 
-Then visit:
-- `http://localhost:8080/`
-- `http://localhost:8080/duas.html`
+Open `http://localhost:3000`.
 
-## Deploy
-Import this repository into Vercel and deploy as a static site.
+## Routes
+- `/` homepage
+- `/duas` all duas
+- `/duas/[slug]` dynamic dua detail pages
+
+## Content
+Dua data is stored in `lib/duas.js`.
