@@ -3,101 +3,226 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uns — A Resting Place for Tired Hearts</title>
+    <title>Uns — Duas for Tired Hearts</title>
     <meta
       name="description"
-      content="Uns is a resting place for tired hearts: authentic duas with meaning, context, and reflection."
+      content="Uns is a calm dua library for hardship, healing, protection, rizq, tawakkul, forgiveness, and daily remembrance."
     />
+    <meta name="theme-color" content="#10231e" />
+    <meta property="og:title" content="Uns — Duas for Tired Hearts" />
+    <meta
+      property="og:description"
+      content="A quiet, source-aware library of Qur’anic duas with translation, context, and reflection."
+    />
+    <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
-      <nav class="nav container">
-        <div class="logo">Uns</div>
-        <a class="button ghost" href="#duas">Explore Duas</a>
-      </nav>
-      <div class="container hero-content">
-        <p class="eyebrow">Authentic duas for real life</p>
-        <h1>A resting place for tired hearts.</h1>
-        <p class="lead">
-          Uns is a simple, beautiful space for hardship, illness, surrender, protection,
-          tawakkul, rizq, emotional overwhelm, fear, relief, and divine mercy.
-        </p>
-        <div class="cta-group">
-          <a class="button" href="#duas">Begin with a Dua</a>
-          <a class="button ghost" href="#foundations">Foundational Duas</a>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Primary navigation">
+        <a class="logo" href="#top" aria-label="Uns home">
+          <span class="logo-mark" aria-hidden="true">۞</span>
+          <span>Uns</span>
+        </a>
+        <div class="nav-links">
+          <a href="#library">Library</a>
+          <a href="#themes">Themes</a>
+          <a href="#method">Method</a>
         </div>
-      </div>
+      </nav>
+
+      <section id="top" class="hero container" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Authentic duas for real life</p>
+          <h1 id="hero-title">A gentle place to return when the heart is tired.</h1>
+          <p class="lead">
+            Uns gathers source-aware duas for hardship, illness, protection, rizq,
+            forgiveness, family, tawakkul, and mercy — with Arabic text, transliteration,
+            meaning, context, and a small reflection for the moment you are in.
+          </p>
+          <div class="cta-group" aria-label="Homepage actions">
+            <a class="button" href="#library">Open the dua library</a>
+            <a class="button ghost" href="#daily-path">Start with three</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Featured dua">
+          <p class="card-label">Featured dua</p>
+          <p class="arabic large" lang="ar" dir="rtl">
+            لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ
+          </p>
+          <p class="transliteration">Lā ilāha illā anta subḥānaka innī kuntu minaẓ-ẓālimīn</p>
+          <p>“There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.”</p>
+          <p class="source">Qur’an 21:87</p>
+        </aside>
+      </section>
     </header>
 
-    <main class="container">
-      <section id="themes" class="section">
-        <h2>What Uns is built for</h2>
-        <div class="tags">
-          <span>Hardship</span><span>Illness</span><span>Surrender</span><span>Protection</span>
-          <span>Tawakkul</span><span>Rizq</span><span>Emotional overwhelm</span><span>Fear</span>
-          <span>Relief</span><span>Divine mercy</span>
+    <main>
+      <section id="themes" class="section container">
+        <div class="section-heading">
+          <p class="eyebrow">Find the words for your moment</p>
+          <h2>Built around the states people actually carry.</h2>
+          <p class="sub">
+            Browse by need, then stay with a dua long enough for its meaning to settle.
+          </p>
+        </div>
+        <div class="tags" aria-label="Dua themes">
+          <span>Hardship</span>
+          <span>Illness</span>
+          <span>Protection</span>
+          <span>Tawakkul</span>
+          <span>Rizq</span>
+          <span>Anxiety</span>
+          <span>Forgiveness</span>
+          <span>Family</span>
+          <span>Gratitude</span>
+          <span>Relief</span>
+          <span>Guidance</span>
+          <span>Divine mercy</span>
         </div>
       </section>
 
-      <section id="duas" class="section">
-        <h2>Featured duas</h2>
-        <p class="sub">Simple translation + source + heartfelt reflection.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>Dua of Ayyub عليه السلام</h3>
-            <p class="arabic">أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ</p>
-            <p>“Harm has touched me, and You are the Most Merciful.”</p>
-          </article>
-          <article class="card">
+      <section id="daily-path" class="section container split">
+        <div>
+          <p class="eyebrow">If you do not know where to begin</p>
+          <h2>Start with a three-dua rhythm.</h2>
+          <p class="sub">
+            One dua for trust, one for forgiveness, and one for what you are asking Allah to open.
+          </p>
+        </div>
+        <ol class="steps">
+          <li>
+            <strong>Ground the heart.</strong>
+            Say <em>ḥasbunallāhu wa ni‘mal-wakīl</em> and name what you are entrusting to Allah.
+          </li>
+          <li>
+            <strong>Return with honesty.</strong>
+            Say the dua of Yunus عليه السلام without pretending you are unaffected.
+          </li>
+          <li>
+            <strong>Ask with need.</strong>
+            Say the dua of Musa عليه السلام for the good only Allah can send.
+          </li>
+        </ol>
+      </section>
+
+      <section id="library" class="section container">
+        <div class="section-heading wide">
+          <p class="eyebrow">Dua library</p>
+          <h2>Source-aware duas with meaning and reflection.</h2>
+          <p class="sub">
+            This launch library focuses on Qur’anic duas and short remembrances with clear references.
+            Translations are presented in plain English for reflection, not as a replacement for tafsir.
+          </p>
+        </div>
+
+        <div class="library-grid">
+          <article class="dua-card">
+            <div class="card-topline"><span>Distress</span><span>Qur’an 21:87</span></div>
             <h3>Dua of Yunus عليه السلام</h3>
-            <p class="arabic">لَا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ</p>
-            <p>“There is no god but You. Glory be to You. I have wronged myself.”</p>
+            <p class="arabic" lang="ar" dir="rtl">لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ</p>
+            <p class="transliteration">Lā ilāha illā anta subḥānaka innī kuntu minaẓ-ẓālimīn</p>
+            <p class="translation">There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.</p>
+            <p class="reflection">For the depths: a dua that joins tawḥīd, Allah’s perfection, and sincere return.</p>
           </article>
-          <article class="card">
-            <h3>Hasbunallahu wa ni‘mal wakeel</h3>
-            <p class="arabic">حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ</p>
-            <p>“Allah is enough for us, and He is the best Disposer of affairs.”</p>
+
+          <article class="dua-card">
+            <div class="card-topline"><span>Illness</span><span>Qur’an 21:83</span></div>
+            <h3>Dua of Ayyub عليه السلام</h3>
+            <p class="arabic" lang="ar" dir="rtl">أَنِّي مَسَّنِيَ الضُّرُّ وَأَنْتَ أَرْحَمُ الرَّاحِمِينَ</p>
+            <p class="transliteration">Annī massaniyaḍ-ḍurru wa anta arḥamur-rāḥimīn</p>
+            <p class="translation">Harm has touched me, and You are the Most Merciful of the merciful.</p>
+            <p class="reflection">For pain: a restrained complaint placed before the One whose mercy is nearest.</p>
           </article>
-          <article class="card">
-            <h3>Wa ufawwidu amri ilallah</h3>
-            <p class="arabic">وَأُفَوِّضُ أَمْرِي إِلَى اللَّهِ</p>
-            <p>“I entrust my affair to Allah.”</p>
+
+          <article class="dua-card">
+            <div class="card-topline"><span>Rizq</span><span>Qur’an 28:24</span></div>
+            <h3>Dua of Musa عليه السلام</h3>
+            <p class="arabic" lang="ar" dir="rtl">رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ</p>
+            <p class="transliteration">Rabbi innī limā anzalta ilayya min khayrin faqīr</p>
+            <p class="translation">My Lord, I am in need of whatever good You send down to me.</p>
+            <p class="reflection">For provision: ask from a place of poverty before Allah, not panic before people.</p>
           </article>
-          <article class="card">
-            <h3>Rabbi inni maghloobun fantasir</h3>
-            <p class="arabic">رَبِّ إِنِّي مَغْلُوبٌ فَانتَصِرْ</p>
-            <p>“My Lord, I am overpowered, so help me.”</p>
+
+          <article class="dua-card">
+            <div class="card-topline"><span>Overwhelmed</span><span>Qur’an 54:10</span></div>
+            <h3>Dua of Nuh عليه السلام</h3>
+            <p class="arabic" lang="ar" dir="rtl">أَنِّي مَغْلُوبٌ فَانْتَصِرْ</p>
+            <p class="transliteration">Annī maghlūbun fantaṣir</p>
+            <p class="translation">I am overpowered, so help me.</p>
+            <p class="reflection">For exhaustion: the shortest words can carry the deepest surrender.</p>
           </article>
-          <article class="card">
-            <h3>La ilaha illallahul azeemul haleem</h3>
-            <p class="arabic">لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ</p>
-            <p>“There is no god but Allah, the Magnificent, the Forbearing.”</p>
+
+          <article class="dua-card">
+            <div class="card-topline"><span>Trust</span><span>Qur’an 3:173</span></div>
+            <h3>Allah is enough</h3>
+            <p class="arabic" lang="ar" dir="rtl">حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ</p>
+            <p class="transliteration">Ḥasbunallāhu wa ni‘mal-wakīl</p>
+            <p class="translation">Allah is sufficient for us, and He is the best disposer of affairs.</p>
+            <p class="reflection">For uncertainty: hand the outcome to Allah without abandoning your next right step.</p>
+          </article>
+
+          <article class="dua-card">
+            <div class="card-topline"><span>Surrender</span><span>Qur’an 40:44</span></div>
+            <h3>I entrust my affair to Allah</h3>
+            <p class="arabic" lang="ar" dir="rtl">وَأُفَوِّضُ أَمْرِي إِلَى اللَّهِ ۚ إِنَّ اللَّهَ بَصِيرٌ بِالْعِبَادِ</p>
+            <p class="transliteration">Wa ufawwiḍu amrī ilallāh; innallāha baṣīrun bil-‘ibād</p>
+            <p class="translation">I entrust my affair to Allah. Indeed, Allah sees His servants.</p>
+            <p class="reflection">For decisions: surrender is not emptiness; it is being seen by Allah while you proceed.</p>
+          </article>
+
+          <article class="dua-card">
+            <div class="card-topline"><span>World & Hereafter</span><span>Qur’an 2:201</span></div>
+            <h3>Good in both lives</h3>
+            <p class="arabic" lang="ar" dir="rtl">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</p>
+            <p class="transliteration">Rabbanā ātinā fid-dunyā ḥasanah wa fil-ākhirati ḥasanah wa qinā ‘adhāban-nār</p>
+            <p class="translation">Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.</p>
+            <p class="reflection">For balanced asking: a comprehensive dua that refuses to shrink the mercy of Allah.</p>
+          </article>
+
+          <article class="dua-card">
+            <div class="card-topline"><span>Family</span><span>Qur’an 25:74</span></div>
+            <h3>Coolness of the eyes</h3>
+            <p class="arabic" lang="ar" dir="rtl">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</p>
+            <p class="transliteration">Rabbanā hab lanā min azwājinā wa dhurriyyātinā qurrata a‘yūnin waj‘alnā lil-muttaqīna imāmā</p>
+            <p class="translation">Our Lord, grant us from our spouses and descendants comfort to our eyes, and make us examples for the mindful.</p>
+            <p class="reflection">For home: ask not only for love, but for a family that helps each other walk toward Allah.</p>
+          </article>
+
+          <article class="dua-card">
+            <div class="card-topline"><span>Steadfastness</span><span>Qur’an 3:8</span></div>
+            <h3>Do not let our hearts deviate</h3>
+            <p class="arabic" lang="ar" dir="rtl">رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِنْ لَدُنْكَ رَحْمَةً</p>
+            <p class="transliteration">Rabbanā lā tuzigh qulūbanā ba‘da idh hadaytanā wa hab lanā min ladunka raḥmah</p>
+            <p class="translation">Our Lord, do not let our hearts deviate after You have guided us, and grant us mercy from Yourself.</p>
+            <p class="reflection">For spiritual fear: guidance is a gift, so the guided keep asking to be kept.</p>
           </article>
         </div>
       </section>
 
-      <section id="foundations" class="section">
-        <h2>Foundational library</h2>
-        <ul>
-          <li>Protection duas for morning, evening, home, and travel.</li>
-          <li>Rizq duas with tawakkul-centered guidance.</li>
-          <li>Remembrance duas for daily grounding.</li>
-          <li>Healing duas for fear, fatigue, and emotional heaviness.</li>
-        </ul>
+      <section id="method" class="section container method-card">
+        <div>
+          <p class="eyebrow">Our method</p>
+          <h2>Quiet design, clear references, careful language.</h2>
+        </div>
+        <div class="method-list">
+          <p><strong>Source first.</strong> Each library entry shows where the dua is found.</p>
+          <p><strong>Meaning over volume.</strong> The goal is presence, not scrolling through hundreds of entries.</p>
+          <p><strong>Reflection with humility.</strong> Notes are prompts for the heart, not legal verdicts or tafsir.</p>
+        </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container">
-        <p><strong>Uns</strong> — Not a database. A companion for return.</p>
-        <p class="muted">Built simply with Vercel, Git, and ChatGPT.</p>
+      <div class="container footer-inner">
+        <p><strong>Uns</strong> — A companion for return.</p>
+        <p class="muted">May Allah accept every call you make to Him.</p>
       </div>
     </footer>
   </body>
