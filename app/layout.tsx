@@ -1,36 +1,49 @@
 import type { Metadata } from 'next'
-import { Amiri, Cormorant_Garamond } from 'next/font/google'
-import type { ReactNode } from 'react'
+import { Amiri, Inter } from 'next/font/google'
 import './globals.css'
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
 const amiri = Amiri({
-  subsets: ['arabic'],
+  subsets: ['arabic', 'latin'],
   weight: ['400', '700'],
   variable: '--font-amiri',
   display: 'swap',
 })
 
-const serif = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-serif',
-  display: 'swap',
-})
-
 export const metadata: Metadata = {
-  title: 'Uns — Duas for tired hearts',
-  description: 'A resting place for tired hearts — authentic duas with story, reflection, and guidance.',
+  title: {
+    default: 'Uns — A Resting Place for Tired Hearts',
+    template: '%s | Uns',
+  },
+  description:
+    'Uns is a resting place for tired hearts: authentic duas with meaning, context, and reflection.',
+  metadataBase: new URL('https://uns.app'),
   openGraph: {
-    title: 'Uns — Duas for tired hearts',
-    description: 'Authentic duas with story, reflection, and guidance.',
+    title: 'Uns — A Resting Place for Tired Hearts',
+    description:
+      'Authentic duas for hardship, illness, surrender, and divine mercy — with story, reflection, and guidance.',
+    images: [{ url: '/og.jpg', width: 1200, height: 630 }],
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Uns — A Resting Place for Tired Hearts',
+    description: 'Authentic duas for hardship, illness, surrender, and divine mercy.',
+    images: ['/og.jpg'],
   },
 }
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${amiri.variable} ${serif.variable}`}>
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${amiri.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   )
 }
