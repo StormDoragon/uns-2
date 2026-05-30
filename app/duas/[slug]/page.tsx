@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, Bookmark, Play, Share2 } from 'lucide-react';
 import { duasData, getDua as findDua, type Dua } from '../../../lib/duas';
 
-export const dynamicParams = false
 
 function getDua(slug: string): Dua {
   const dua = findDua(slug);
