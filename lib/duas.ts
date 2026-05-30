@@ -69,26 +69,26 @@ export const duasData: Record<string, Dua> = {
     translation:
       'Allah is sufficient for me. There is no god but He. I have placed my trust in Him, and He is the Lord of the Mighty Throne.',
     story:
-      'The Prophet ﷺ taught this dua during the most threatening period of his mission. When facing persecution in Makkah, when enemies plotted, when the believers were few and fear was constant, this was the affirmation he returned to. It is both a statement and a practice of surrender.',
+      'These Qur\'anic words teach the believer to meet fear with reliance on Allah. They gather sufficiency, tawhid, trust, and the majesty of the Lord of the Mighty Throne into one remembrance.',
     reflection:
       'Anxiety feeds on the illusion that outcomes depend entirely on us. This dua is its antidote — not by denying reality, but by locating it correctly. "He is the Lord of the Mighty Throne" means: the worst thing that could happen is still inside His dominion. Every fear, every threat, every worst-case scenario — still under the Throne. This dua does not promise ease. It promises company.',
     sources: [
       { type: "Qur'an", ref: 'Surah At-Tawbah 9:129', authenticity: "Direct from Qur'an" },
-      { type: 'Hadith', ref: 'Sahih Bukhari 6346', authenticity: 'Authentic' },
+      { type: 'Hadith', ref: 'Sunan Abi Dawud 5081', authenticity: 'Reported; authenticity differed upon' },
     ],
     guidance:
-      'Recite seven times morning and evening, and especially when the chest tightens. The Prophet ﷺ said: "Whoever says this seven times every morning and evening, Allah will take care of whatever worries him."',
+      'Recite it as a Qur\'anic remembrance when the chest tightens. Some narrations mention saying it seven times morning and evening, though scholars differ on that report, so hold the wording firmly and the specific routine with care.',
   },
   'dua-of-ibrahim': {
     slug: 'dua-of-ibrahim',
     category: 'Surrender & Tawakkul',
-    title: 'Dua of Ibrahim — Complete Surrender',
+    title: 'Dua of the Believer — Complete Surrender',
     arabic: 'وَأُفَوِّضُ أَمْرِي إِلَى اللَّهِ إِنَّ اللَّهَ بَصِيرٌ بِالْعِبَادِ',
     transliteration: "Wa ufawwiḍu amrī ilallāh innallāha baṣīrun bil-'ibād",
     translation:
       'And I entrust my affair to Allah. Indeed, Allah is Seeing of His servants.',
     story:
-      'These words were spoken by a believer in Pharaoh\'s court who had hidden his faith. When he could hide no longer and faced the wrath of the most powerful ruler of his time, he turned entirely to Allah — not with a request for victory, but with full surrender. The Qur\'an tells us Allah protected him from what they plotted.',
+      'These words were spoken by a believer from Pharaoh\'s people who had hidden his faith. When he could hide no longer and faced the wrath of the most powerful ruler of his time, he turned entirely to Allah — not with a request for victory, but with full surrender. The Qur\'an tells us Allah protected him from what they plotted.',
     reflection:
       'Tawakkul is often misunderstood as passivity. This dua reveals its true nature: it is an act of seeing clearly. "Allah is Seeing of His servants" — this is not a platitude. It is the recognition that Allah watches every detail of every affair, including yours. To entrust is not to abandon care. It is to release the outcome to the One who sees better than you do.',
     sources: [
@@ -102,7 +102,7 @@ export const duasData: Record<string, Dua> = {
     category: 'Overwhelm & Exhaustion',
     title: 'Rabbi Inni Maghloob — I Am Overpowered',
     arabic: 'رَبِّ إِنِّي مَغْلُوبٌ فَانتَصِرْ',
-    transliteration: "Rabbi innī maghglūbun fantasir",
+    transliteration: "Rabbi innī maghlūbun fantasir",
     translation: 'My Lord, I am overpowered — so help me.',
     story:
       "Prophet Nuh (Noah) عليه السلام called his people to Allah for 950 years. He was mocked, threatened, ignored. His own son refused him. When he had truly exhausted every effort — every argument, every approach, every degree of patience — he finally called to Allah: I am overwhelmed. Help me. And the response came.",
@@ -150,7 +150,7 @@ export const duasData: Record<string, Dua> = {
       {
         type: 'Hadith',
         ref: 'Sahih Bukhari 3293, Sahih Muslim 2691',
-        authenticity: 'Authentic (Mutawatir)',
+        authenticity: 'Authentic',
       },
       {
         type: 'Hadith',
@@ -159,24 +159,7 @@ export const duasData: Record<string, Dua> = {
       },
     ],
     guidance:
-      'Recite 100 times in the morning for full-day protection and enormous reward. Also recite after every obligatory prayer (10 times), and whenever the heart feels distant, scattered, or overwhelmed — this dhikr re-centres the soul on what is true.',
-  },
-    slug: 'dua-for-protection',
-    category: 'Protection & Fear',
-    title: "Hasbunallah Wa Ni'mal Wakeel",
-    arabic: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
-    transliteration: "Ḥasbunallāhu wa ni'mal wakīl",
-    translation: 'Allah is enough for us, and He is the best Disposer of affairs.',
-    story:
-      "These are the exact words the Prophet Ibrahim عليه السلام said when he was thrown into the fire. They are also the words the Prophet Muhammad ﷺ and his companions said when warned: 'A great army has gathered against you — fear them.' The Qur'an tells us their response to that threat increased their faith, not their fear, and they returned with blessings and no harm.",
-    reflection:
-      "This dua has been tested by fire — literally. Ibrahim عليه السلام did not know the fire would become cool. He simply said these words in the moment of being thrown. The outcome belonged to Allah. The words belong to us. This is what makes it so alive across centuries: it was never about knowing what would happen next. It was about who holds what happens next.",
-    sources: [
-      { type: "Qur'an", ref: 'Surah Al-Imran 3:173', authenticity: "Direct from Qur'an" },
-      { type: 'Hadith', ref: 'Sahih Bukhari 4563', authenticity: 'Authentic' },
-    ],
-    guidance:
-      'Recite when facing a threat — financial, social, physical, or spiritual. The Prophet ﷺ said Ibrahim عليه السلام said this when thrown into the fire, and Muhammad ﷺ said it when warned of an enemy army.',
+      'Recite 100 times in a day for the narrated reward and protection. Also recite after obligatory prayers where established, and whenever the heart feels distant, scattered, or overwhelmed — this dhikr re-centres the soul on what is true.',
   },
 }
 
