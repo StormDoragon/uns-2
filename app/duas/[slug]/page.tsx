@@ -2,112 +2,18 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Bookmark, Play, Share2 } from 'lucide-react';
+import { duasData, getDua as findDua, type Dua } from '../../../lib/duas';
 
-interface DuaSource {
-  type: 'Qur’an' | 'Hadith';
-  ref: string;
-  note: string;
-}
-
-interface Dua {
-  slug: string;
-  category: string;
-  title: string;
-  arabic: string;
-  transliteration: string;
-  translation: string;
-  story: string;
-  reflection: string;
-  guidance: string;
-  sources: DuaSource[];
-}
-
-const duasData: Record<string, Dua> = {
-  'dua-of-yunus': {
-    slug: 'dua-of-yunus',
-    category: 'Distress & Repentance',
-    title: 'Dua of Yunus — Light in the Depths',
-    arabic: 'لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ',
-    transliteration: 'Lā ilāha illā anta subḥānaka innī kuntu minaẓ-ẓālimīn',
-    translation: 'There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.',
-    story:
-      'Yunus عليه السلام called upon Allah from a place no person could reach him. The dua brings together tawḥīd, Allah’s perfection, and an honest admission of need.',
-    reflection:
-      'When the heart feels surrounded, this dua teaches that no darkness is too deep for Allah’s knowledge and mercy.',
-    guidance:
-      'Recite it slowly when distress rises. Pause after each phrase: affirm Allah alone, glorify Him, then return with humility.',
-    sources: [{ type: 'Qur’an', ref: 'Surah Al-Anbiya 21:87', note: 'Direct Qur’anic dua' }],
-  },
-  'dua-of-ayyub': {
-    slug: 'dua-of-ayyub',
-    category: 'Illness & Hardship',
-    title: 'Dua of Ayyub — Mercy When Harm Touches You',
-    arabic: 'أَنِّي مَسَّنِيَ الضُّرُّ وَأَنْتَ أَرْحَمُ الرَّاحِمِينَ',
-    transliteration: 'Annī massaniyaḍ-ḍurru wa anta arḥamur-rāḥimīn',
-    translation: 'Harm has touched me, and You are the Most Merciful of the merciful.',
-    story:
-      'Ayyub عليه السلام endured prolonged trial and turned to Allah with few words, naming his pain while holding fast to Allah’s mercy.',
-    reflection:
-      'The dua is not denial. It is pain placed in the safest possible place: before the Most Merciful.',
-    guidance:
-      'Use it in sickness, grief, fatigue, or emotional heaviness. Let the final words remind you that Allah’s mercy is greater than the trial.',
-    sources: [{ type: 'Qur’an', ref: 'Surah Al-Anbiya 21:83', note: 'Direct Qur’anic dua' }],
-  },
-  'dua-of-musa-for-need': {
-    slug: 'dua-of-musa-for-need',
-    category: 'Rizq & Need',
-    title: 'Dua of Musa — In Need of Good',
-    arabic: 'رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ',
-    transliteration: 'Rabbi innī limā anzalta ilayya min khayrin faqīr',
-    translation: 'My Lord, I am in need of whatever good You send down to me.',
-    story:
-      'Musa عليه السلام made this dua after leaving danger behind, helping others, and arriving with no worldly support except Allah.',
-    reflection:
-      'It teaches a clean kind of asking: not demanding a specific door, but asking Allah for the good He knows you need.',
-    guidance:
-      'Recite it when looking for work, stability, marriage, shelter, direction, or any provision that must come from Allah.',
-    sources: [{ type: 'Qur’an', ref: 'Surah Al-Qasas 28:24', note: 'Direct Qur’anic dua' }],
-  },
-  'hasbunallahu-wa-nimal-wakeel': {
-    slug: 'hasbunallahu-wa-nimal-wakeel',
-    category: 'Trust & Courage',
-    title: 'Allah Is Sufficient for Us',
-    arabic: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
-    transliteration: 'Ḥasbunallāhu wa ni‘mal-wakīl',
-    translation: 'Allah is sufficient for us, and He is the best disposer of affairs.',
-    story:
-      'The Qur’an records these words as the response of believers when fear was intensified against them.',
-    reflection:
-      'It is a sentence of courage: your means may be small, but the One entrusted with your affair is not.',
-    guidance:
-      'Say it when anxiety turns toward outcomes you cannot control. Then take the next lawful step available to you.',
-    sources: [{ type: 'Qur’an', ref: 'Surah Aal-Imran 3:173', note: 'Qur’anic remembrance' }],
-  },
-  'wa-ufawwidu-amri-ilallah': {
-    slug: 'wa-ufawwidu-amri-ilallah',
-    category: 'Surrender',
-    title: 'I Entrust My Affair to Allah',
-    arabic: 'وَأُفَوِّضُ أَمْرِي إِلَى اللَّهِ ۚ إِنَّ اللَّهَ بَصِيرٌ بِالْعِبَادِ',
-    transliteration: 'Wa ufawwiḍu amrī ilallāh; innallāha baṣīrun bil-‘ibād',
-    translation: 'I entrust my affair to Allah. Indeed, Allah sees His servants.',
-    story:
-      'These words are spoken in the Qur’an by a believing man who stood for truth while surrounded by pressure.',
-    reflection:
-      'Surrender is not passivity. It is moving with the knowledge that Allah sees every hidden pressure and every sincere intention.',
-    guidance:
-      'Recite it before difficult conversations, decisions, or moments when you fear being misunderstood.',
-    sources: [{ type: 'Qur’an', ref: 'Surah Ghafir 40:44', note: 'Qur’anic statement of surrender' }],
-  },
-};
+export const dynamicParams = false
 
 function getDua(slug: string): Dua {
-  const dua = duasData[slug];
+  const dua = findDua(slug);
 
   if (!dua) {
     notFound();
   }
 
-  return dua;
+  return dua as Dua;
 }
 
 export function generateStaticParams() {
@@ -200,7 +106,7 @@ export default function DuaPage({ params }: { params: { slug: string } }) {
             <ul className="space-y-3">
               {dua.sources.map((source) => (
                 <li key={`${source.type}-${source.ref}`} className="leading-7">
-                  <strong>{source.type}:</strong> {source.ref} <span className="text-stone-600 dark:text-stone-400">— {source.note}</span>
+                  <strong>{source.type}:</strong> {source.ref} <span className="text-stone-600 dark:text-stone-400">— {source.authenticity}</span>
                 </li>
               ))}
             </ul>
