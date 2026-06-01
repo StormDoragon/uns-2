@@ -7,15 +7,16 @@ import ShareButton from './ShareButton'
 import BookmarkButton from './BookmarkButton'
 
 interface Props {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export function generateStaticParams() {
   return Object.keys(duasData).map((slug) => ({ slug }))
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const dua = getDua(params.slug)
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params
+  const dua = getDua(slug)
   if (!dua) return {}
   return {
     title: `${dua.title} | Uns`,
@@ -29,8 +30,9 @@ export function generateMetadata({ params }: Props): Metadata {
   }
 }
 
-export default function DuaPage({ params }: Props) {
-  const dua = getDua(params.slug)
+export default async function DuaPage({ params }: Props) {
+  const { slug } = await params
+  const dua = getDua(slug)
   if (!dua) notFound()
 
   const related = allDuas.filter((d) => d.slug !== dua.slug).slice(0, 3)
