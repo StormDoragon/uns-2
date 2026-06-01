@@ -18,9 +18,9 @@ export default function HomePage() {
 
       {/* Nav */}
       <nav className="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
-        <span className="text-2xl font-semibold tracking-tight text-stone-900 dark:text-stone-100">
+        <Link href="/" className="text-2xl font-semibold tracking-tight text-stone-900 dark:text-stone-100 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
           Uns
-        </span>
+        </Link>
         <Link
           href="/duas"
           className="text-sm text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"

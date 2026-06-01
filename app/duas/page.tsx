@@ -11,9 +11,11 @@ export default function DuasIndexPage() {
   return (
     <main className="min-h-screen bg-[#f8f1e7] px-6 py-12 text-stone-800 dark:bg-[#0a0f0d] dark:text-stone-100">
       <div className="mx-auto max-w-5xl">
-        <Link href="/" className="text-sm text-emerald-700 transition-colors hover:text-emerald-900 dark:text-emerald-300 dark:hover:text-emerald-100">
-          ← Home
-        </Link>
+        <div className="flex items-center justify-between mb-6">
+          <Link href="/" className="text-2xl font-semibold tracking-tight text-stone-900 dark:text-stone-100 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
+            Uns
+          </Link>
+        </div>
         <header className="my-10">
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-emerald-700 dark:text-emerald-300">Dua library</p>
           <h1 className="font-serif text-5xl leading-tight md:text-6xl">All duas</h1>

@@ -43,13 +43,18 @@ export default async function DuaPage({ params }: Props) {
       {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-stone-200/80 dark:border-stone-800 bg-white/90 dark:bg-black/85 backdrop-blur-md">
         <div className="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between">
-          <Link
-            href="/duas"
-            className="flex items-center gap-2 text-sm transition-colors hover:text-emerald-700 dark:hover:text-emerald-400"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            All Duas
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/" className="text-xl font-semibold tracking-tight text-stone-900 dark:text-stone-100 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
+              Uns
+            </Link>
+            <Link
+              href="/duas"
+              className="flex items-center gap-2 text-sm transition-colors hover:text-emerald-700 dark:hover:text-emerald-400"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              All Duas
+            </Link>
+          </div>
           <div className="flex gap-2">
             <BookmarkButton slug={dua.slug} title={dua.title} />
             <ShareButton title={dua.title} />
