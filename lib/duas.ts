@@ -132,6 +132,75 @@ export const duasData: Record<string, Dua> = {
     guidance:
       'Recite when facing a threat — financial, social, physical, or spiritual. The Prophet ﷺ said Ibrahim عليه السلام said this when thrown into the fire, and Muhammad ﷺ said it when warned of an enemy army.',
   },
+  'coolness-of-eyes': {
+    slug: 'coolness-of-eyes',
+    category: 'Family & Marriage',
+    title: 'Coolness of the Eyes at Home',
+    arabic: 'رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا',
+    transliteration: "Rabbanā hab lanā min azwājinā wa dhurriyyātinā qurrata a'yūnin waj'alnā lil-muttaqīna imāmā",
+    translation: 'Our Lord, grant us from our spouses and descendants comfort to our eyes, and make us examples for the mindful.',
+    story:
+      'The Qur\'an places this dua among the defining qualities of the servants of the Most Merciful — those whose deepest hopes are not shallow. They do not only want a family that looks good from the outside. They ask Allah to make their spouses and descendants a source of qurrat a\'yun: coolness of the eyes. That phrase carries relief after heat, the kind of joy that does not agitate the heart. The dua then rises into responsibility: make us leaders for the mindful — a home not only soothing, but guiding.',
+    reflection:
+      'This is a mature family dua. It asks for tenderness and taqwa together. It asks Allah to make the people closest to you a reason your faith becomes steadier, not weaker. Not every family story is simple — some recite this dua with gratitude, some with fear, some with longing, some with grief. All of those hearts can still ask Allah to place coolness where there has been heat.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Al-Furqan 25:74', authenticity: "Direct from Qur'an" },
+    ],
+    guidance:
+      'Whisper it for your spouse, your children, your future family, your parents, or your own wounded sense of home. Ask Allah to build a household that your eyes can rest in and your akhirah can benefit from.',
+  },
+  'dua-of-musa-for-need': {
+    slug: 'dua-of-musa-for-need',
+    category: 'Rizq & Need',
+    title: 'Dua of Musa — The Shade of the Tree',
+    arabic: 'رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ',
+    transliteration: "Rabbi innī limā anzalta ilayya min khayrin faqīr",
+    translation: 'My Lord, I am in need of whatever good You send down to me.',
+    story:
+      'Prophet Musa عليه السلام reached Madyan after fleeing danger — no secure income, no familiar room, no clear next step. At the well he saw two women holding back their flock. Even in need, he still helped them, then withdrew to the shade. There, away from the crowd, he did not advertise his desperation. He turned upward and placed his poverty before Allah. Allah opened a path from where Musa could not have engineered it — an invitation came, safety came, work came, family came.',
+    reflection:
+      'The word that opens the heart here is khayr — goodness. Musa عليه السلام does not dictate the form of the rescue. He does not say: send this exact job, this exact house, this exact outcome. He says in effect: whatever good You send, I need it. It is a dua of dignified poverty before Allah. The hands are empty, but they are not frantic. The future is blank, but it is not godless.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Al-Qasas 28:24', authenticity: "Direct from Qur'an" },
+    ],
+    guidance:
+      'When you feel bankrupt emotionally, financially, or spiritually — step into the shade. Ask Allah for khayr in the form He knows is best, even if you cannot yet name it. Your provision is not trapped in the hands of people; it descends by the command of Allah.',
+  },
+  'hearts-do-not-deviate': {
+    slug: 'hearts-do-not-deviate',
+    category: 'Steadfastness & Faith',
+    title: 'Hold My Heart After Guidance',
+    arabic: 'رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِنْ لَدُنْكَ رَحْمَةً',
+    transliteration: "Rabbanā lā tuzigh qulūbanā ba'da idh hadaytanā wa hab lanā min ladunka raḥmah",
+    translation: 'Our Lord, do not let our hearts deviate after You have guided us, and grant us mercy from Yourself.',
+    story:
+      'There is a fear known by people who have tasted guidance: what if my heart changes? What if what feels clear today becomes distant tomorrow? This fear is not hopelessness — it is humility. It means you understand that guidance was never a trophy you earned; it was a gift Allah placed in your chest. The heart is subtle. It can be moved by praise, pain, desire, resentment, doubt, and distraction. So the believers ask Allah not to let their hearts drift.',
+    reflection:
+      'The dua continues: grant us mercy from Yourself. Steadfastness is not powered by self-admiration. It is sustained by mercy. This changes how you think about religious consistency — you still take the means: prayer, repentance, good company, knowledge. But beneath every means is a plea: O Allah, keep my heart with You. Say this when faith feels sweet, and say it when faith feels fragile.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Al-Imran 3:8', authenticity: "Direct from Qur'an" },
+    ],
+    guidance:
+      'For the guided person who refuses to become arrogant about guidance. For the returning person, the student, the parent, the convert, the sinner trying again, and the worshiper who knows tomorrow is not guaranteed.',
+  },
+  'rabbana-atina': {
+    slug: 'rabbana-atina',
+    category: 'World & Hereafter',
+    title: 'Rabbana Atina — Good in Both Homes',
+    arabic: 'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ',
+    transliteration: "Rabbanā ātinā fid-dunyā ḥasanah wa fil-ākhirati ḥasanah wa qinā 'adhāban-nār",
+    translation: 'Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.',
+    story:
+      "The Prophet ﷺ loved and frequently recited this dua. Anas ibn Malik reported that it was the dua the Prophet ﷺ made most often. Allah teaches a comprehensive request: good in the dunya, good in the akhirah, and protection from the Fire. It is short enough for the tongue and wide enough for a lifetime. The word ḥasanah is beautifully open — it includes what Allah knows to be truly good, not merely what the nafs mistakes for relief.",
+    reflection:
+      'Some people feel guilty asking Allah for worldly ease. Others become so consumed with immediate needs that the Hereafter becomes distant in their asking. This dua gathers the whole human being back into balance. It trains you not to split your life into sacred and ordinary. Your meals, work, marriage, healing, worship, death, and resurrection are all placed before one Lord. The dua ends by asking protection from the Fire — because every worldly good loses meaning if it leads away from Allah.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Al-Baqarah 2:201', authenticity: "Direct from Qur'an" },
+      { type: 'Hadith', ref: 'Sahih Bukhari 6389, Sahih Muslim 2690', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'When you do not know what to ask, ask broadly and humbly. Let Allah choose the shape of ḥasanah for you in both homes. The Prophet ﷺ made this the most frequent of his duas — there is wisdom in its comprehensiveness.',
+  },
   'tahlil-complete': {
     slug: 'tahlil-complete',
     category: 'Remembrance & Gratitude',

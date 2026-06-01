@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Heart, Shield, Compass, Play } from 'lucide-react'
 import { getDua, allDuas, duasData } from '@/lib/duas'
-import ShareButton from '@/components/ShareButton'
-import BookmarkButton from '@/components/BookmarkButton'
+import ShareButton from './ShareButton'
+import BookmarkButton from './BookmarkButton'
 
 interface Props {
   params: { slug: string }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { allDuas } from '../../lib/duas'
+import { allDuas } from '@/lib/duas'
 
 export const metadata: Metadata = {
   title: 'All Duas | Uns',
