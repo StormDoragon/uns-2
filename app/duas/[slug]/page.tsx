@@ -99,6 +99,10 @@ export default async function DuaPage({ params }: Props) {
           </div>
         </section>
 
+        <p className="-mt-8 mb-12 max-w-2xl text-sm leading-7 text-stone-500 dark:text-stone-400">
+          The Arabic text stays unchanged; transliteration and translation can be adapted to the language that fits the verse most faithfully.
+        </p>
+
         {/* Listen button */}
         <div className="flex justify-center mb-14">
           <button
