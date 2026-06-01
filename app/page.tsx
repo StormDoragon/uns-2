@@ -106,7 +106,7 @@ export default function HomePage() {
                 {dua.arabic.split(' ').slice(0, 5).join(' ')}…
               </p>
               <p className="text-sm text-stone-500 dark:text-stone-500 leading-relaxed line-clamp-2">
-                {dua.translation}
+                {dua.translations.en?.translation || Object.values(dua.translations)[0]?.translation}
               </p>
               <p className="mt-4 text-xs text-stone-400 dark:text-stone-600 group-hover:text-emerald-600 dark:group-hover:text-emerald-500 transition-colors">
                 Read more →

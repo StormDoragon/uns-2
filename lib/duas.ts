@@ -4,18 +4,33 @@ export interface DuaSource {
   authenticity: string
 }
 
+export interface DuaTranslation {
+  transliteration: string
+  translation: string
+}
+
 export interface Dua {
   slug: string
   category: string
   title: string
   arabic: string
-  transliteration: string
-  translation: string
+  translations: Record<string, DuaTranslation>
   story: string
   reflection: string
   sources: DuaSource[]
   guidance: string
 }
+
+export const LANGUAGES = {
+  en: 'English',
+  ur: 'اردو (Urdu)',
+  fr: 'Français',
+  ar: 'العربية',
+  tr: 'Türkçe',
+  id: 'Bahasa Indonesia',
+} as const
+
+export type LanguageCode = keyof typeof LANGUAGES
 
 export const duasData: Record<string, Dua> = {
   'dua-of-ayyub': {
@@ -23,8 +38,12 @@ export const duasData: Record<string, Dua> = {
     category: 'Illness & Suffering',
     title: 'Dua of Ayyub — When Pain Is All You Know',
     arabic: 'أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ',
-    transliteration: "Annī massaniya al-durru wa anta arḥamu al-rāḥimīn",
-    translation: 'Harm has touched me, and You are the Most Merciful of those who show mercy.',
+    translations: {
+      en: {
+        transliteration: "Annī massaniya al-durru wa anta arḥamu al-rāḥimīn",
+        translation: 'Harm has touched me, and You are the Most Merciful of those who show mercy.',
+      },
+    },
     story:
       'Prophet Ayyub (Job) عليه السلام endured years of devastating illness, loss of wealth, and loss of family — yet never abandoned gratitude or patience. When the pain became unbearable, he did not demand relief. He simply stated his reality to his Lord, placing it before the One who is the Most Merciful. Allah responded by ending his suffering and restoring everything — and more.',
     reflection:
@@ -40,9 +59,12 @@ export const duasData: Record<string, Dua> = {
     category: 'Distress & Repentance',
     title: 'Dua of Yunus — The Light in the Depths',
     arabic: 'لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ',
-    transliteration: "Lā ilāha illā anta subḥānaka innī kuntu minaz-zālimīn",
-    translation:
-      'There is no deity except You. Exalted are You. Indeed, I have been of the wrongdoers.',
+    translations: {
+      en: {
+        transliteration: "Lā ilāha illā anta subḥānaka innī kuntu minaz-zālimīn",
+        translation: 'There is no deity except You. Exalted are You. Indeed, I have been of the wrongdoers.',
+      },
+    },
     story:
       'Prophet Yunus (Jonah) عليه السلام left his people without permission from Allah, boarded a ship that was cast into a storm, was thrown overboard, and swallowed by a whale. In three layers of darkness — the darkness of the sea, the darkness of the night, and the darkness of the whale\'s belly — he called out to Allah. The Qur\'an tells us Allah responded and saved him.',
     reflection:
@@ -64,10 +86,12 @@ export const duasData: Record<string, Dua> = {
     title: 'Hasbiyallah — Allah Is Enough',
     arabic:
       'حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ',
-    transliteration:
-      "Ḥasbiyallāhu lā ilāha illā huwa 'alayhi tawakkaltu wa huwa Rabbul 'arshil 'aẓīm",
-    translation:
-      'Allah is sufficient for me. There is no god but He. I have placed my trust in Him, and He is the Lord of the Mighty Throne.',
+    translations: {
+      en: {
+        transliteration: "Ḥasbiyallāhu lā ilāha illā huwa 'alayhi tawakkaltu wa huwa Rabbul 'arshil 'aẓīm",
+        translation: 'Allah is sufficient for me. There is no god but He. I have placed my trust in Him, and He is the Lord of the Mighty Throne.',
+      },
+    },
     story:
       'These Qur\'anic words teach the believer to meet fear with reliance on Allah. They gather sufficiency, tawhid, trust, and the majesty of the Lord of the Mighty Throne into one remembrance.',
     reflection:
@@ -84,9 +108,12 @@ export const duasData: Record<string, Dua> = {
     category: 'Surrender & Tawakkul',
     title: 'Dua of the Believer — Complete Surrender',
     arabic: 'وَأُفَوِّضُ أَمْرِي إِلَى اللَّهِ إِنَّ اللَّهَ بَصِيرٌ بِالْعِبَادِ',
-    transliteration: "Wa ufawwiḍu amrī ilallāh innallāha baṣīrun bil-'ibād",
-    translation:
-      'And I entrust my affair to Allah. Indeed, Allah is Seeing of His servants.',
+    translations: {
+      en: {
+        transliteration: "Wa ufawwiḍu amrī ilallāh innallāha baṣīrun bil-'ibād",
+        translation: 'And I entrust my affair to Allah. Indeed, Allah is Seeing of His servants.',
+      },
+    },
     story:
       'These words were spoken by a believer from Pharaoh\'s people who had hidden his faith. When he could hide no longer and faced the wrath of the most powerful ruler of his time, he turned entirely to Allah — not with a request for victory, but with full surrender. The Qur\'an tells us Allah protected him from what they plotted.',
     reflection:
@@ -102,8 +129,12 @@ export const duasData: Record<string, Dua> = {
     category: 'Overwhelm & Exhaustion',
     title: 'Rabbi Inni Maghloob — I Am Overpowered',
     arabic: 'رَبِّ إِنِّي مَغْلُوبٌ فَانتَصِرْ',
-    transliteration: "Rabbi innī maghlūbun fantasir",
-    translation: 'My Lord, I am overpowered — so help me.',
+    translations: {
+      en: {
+        transliteration: "Rabbi innī maghlūbun fantasir",
+        translation: 'My Lord, I am overpowered — so help me.',
+      },
+    },
     story:
       "Prophet Nuh (Noah) عليه السلام called his people to Allah for 950 years. He was mocked, threatened, ignored. His own son refused him. When he had truly exhausted every effort — every argument, every approach, every degree of patience — he finally called to Allah: I am overwhelmed. Help me. And the response came.",
     reflection:
@@ -119,8 +150,12 @@ export const duasData: Record<string, Dua> = {
     category: 'Protection & Fear',
     title: "Hasbunallah Wa Ni'mal Wakeel",
     arabic: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
-    transliteration: "Ḥasbunallāhu wa ni'mal wakīl",
-    translation: 'Allah is enough for us, and He is the best Disposer of affairs.',
+    translations: {
+      en: {
+        transliteration: "Ḥasbunallāhu wa ni'mal wakīl",
+        translation: 'Allah is enough for us, and He is the best Disposer of affairs.',
+      },
+    },
     story:
       "These are the exact words the Prophet Ibrahim عليه السلام said when he was thrown into the fire. They are also the words the Prophet Muhammad ﷺ and his companions said when warned: 'A great army has gathered against you — fear them.' The Qur'an tells us their response to that threat increased their faith, not their fear, and they returned with blessings and no harm.",
     reflection:
@@ -137,8 +172,12 @@ export const duasData: Record<string, Dua> = {
     category: 'Family & Marriage',
     title: 'Coolness of the Eyes at Home',
     arabic: 'رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا',
-    transliteration: "Rabbanā hab lanā min azwājinā wa dhurriyyātinā qurrata a'yūnin waj'alnā lil-muttaqīna imāmā",
-    translation: 'Our Lord, grant us from our spouses and descendants comfort to our eyes, and make us examples for the mindful.',
+    translations: {
+      en: {
+        transliteration: "Rabbanā hab lanā min azwājinā wa dhurriyyātinā qurrata a'yūnin waj'alnā lil-muttaqīna imāmā",
+        translation: 'Our Lord, grant us from our spouses and descendants comfort to our eyes, and make us examples for the mindful.',
+      },
+    },
     story:
       'The Qur\'an places this dua among the defining qualities of the servants of the Most Merciful — those whose deepest hopes are not shallow. They do not only want a family that looks good from the outside. They ask Allah to make their spouses and descendants a source of qurrat a\'yun: coolness of the eyes. That phrase carries relief after heat, the kind of joy that does not agitate the heart. The dua then rises into responsibility: make us leaders for the mindful — a home not only soothing, but guiding.',
     reflection:
@@ -154,8 +193,12 @@ export const duasData: Record<string, Dua> = {
     category: 'Rizq & Need',
     title: 'Dua of Musa — The Shade of the Tree',
     arabic: 'رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ',
-    transliteration: "Rabbi innī limā anzalta ilayya min khayrin faqīr",
-    translation: 'My Lord, I am in need of whatever good You send down to me.',
+    translations: {
+      en: {
+        transliteration: "Rabbi innī limā anzalta ilayya min khayrin faqīr",
+        translation: 'My Lord, I am in need of whatever good You send down to me.',
+      },
+    },
     story:
       'Prophet Musa عليه السلام reached Madyan after fleeing danger — no secure income, no familiar room, no clear next step. At the well he saw two women holding back their flock. Even in need, he still helped them, then withdrew to the shade. There, away from the crowd, he did not advertise his desperation. He turned upward and placed his poverty before Allah. Allah opened a path from where Musa could not have engineered it — an invitation came, safety came, work came, family came.',
     reflection:
@@ -171,8 +214,12 @@ export const duasData: Record<string, Dua> = {
     category: 'Steadfastness & Faith',
     title: 'Hold My Heart After Guidance',
     arabic: 'رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِنْ لَدُنْكَ رَحْمَةً',
-    transliteration: "Rabbanā lā tuzigh qulūbanā ba'da idh hadaytanā wa hab lanā min ladunka raḥmah",
-    translation: 'Our Lord, do not let our hearts deviate after You have guided us, and grant us mercy from Yourself.',
+    translations: {
+      en: {
+        transliteration: "Rabbanā lā tuzigh qulūbanā ba'da idh hadaytanā wa hab lanā min ladunka raḥmah",
+        translation: 'Our Lord, do not let our hearts deviate after You have guided us, and grant us mercy from Yourself.',
+      },
+    },
     story:
       'There is a fear known by people who have tasted guidance: what if my heart changes? What if what feels clear today becomes distant tomorrow? This fear is not hopelessness — it is humility. It means you understand that guidance was never a trophy you earned; it was a gift Allah placed in your chest. The heart is subtle. It can be moved by praise, pain, desire, resentment, doubt, and distraction. So the believers ask Allah not to let their hearts drift.',
     reflection:
@@ -188,8 +235,12 @@ export const duasData: Record<string, Dua> = {
     category: 'World & Hereafter',
     title: 'Rabbana Atina — Good in Both Homes',
     arabic: 'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ',
-    transliteration: "Rabbanā ātinā fid-dunyā ḥasanah wa fil-ākhirati ḥasanah wa qinā 'adhāban-nār",
-    translation: 'Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.',
+    translations: {
+      en: {
+        transliteration: "Rabbanā ātinā fid-dunyā ḥasanah wa fil-ākhirati ḥasanah wa qinā 'adhāban-nār",
+        translation: 'Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.',
+      },
+    },
     story:
       "The Prophet ﷺ loved and frequently recited this dua. Anas ibn Malik reported that it was the dua the Prophet ﷺ made most often. Allah teaches a comprehensive request: good in the dunya, good in the akhirah, and protection from the Fire. It is short enough for the tongue and wide enough for a lifetime. The word ḥasanah is beautifully open — it includes what Allah knows to be truly good, not merely what the nafs mistakes for relief.",
     reflection:
@@ -207,10 +258,12 @@ export const duasData: Record<string, Dua> = {
     title: 'Tahlil — The Complete Declaration of Oneness',
     arabic:
       'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',
-    transliteration:
-      "Lā ilāha illallāhu waḥdahu lā sharīka lah, lahu al-mulku wa lahu al-ḥamdu wa huwa 'alā kulli shay'in qadīr",
-    translation:
-      'There is no god but Allah. He is One, and He has no partner with Him; to Him belong the sovereignty and praise, and He is competent over all things.',
+    translations: {
+      en: {
+        transliteration: "Lā ilāha illallāhu waḥdahu lā sharīka lah, lahu al-mulku wa lahu al-ḥamdu wa huwa 'alā kulli shay'in qadīr",
+        translation: 'There is no god but Allah. He is One, and He has no partner with Him; to Him belong the sovereignty and praise, and He is competent over all things.',
+      },
+    },
     story:
       'The Prophet ﷺ described this as the best dhikr a person can say. In one narration, he taught that whoever says it one hundred times in a day receives the reward of freeing ten slaves, has one hundred good deeds written for him, has one hundred sins erased, and is protected from Shaytan for the rest of that day. He also said it is the most virtuous thing the Prophets before him ever said.',
     reflection:

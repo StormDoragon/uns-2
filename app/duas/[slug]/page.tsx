@@ -5,6 +5,7 @@ import { ArrowLeft, BookOpen, Heart, Shield, Compass, Play } from 'lucide-react'
 import { getDua, allDuas, duasData } from '@/lib/duas'
 import ShareButton from './ShareButton'
 import BookmarkButton from './BookmarkButton'
+import TranslationSection from './TranslationSection'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -18,12 +19,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const dua = getDua(slug)
   if (!dua) return {}
+  const enTranslation = dua.translations.en?.translation || Object.values(dua.translations)[0]?.translation || ''
   return {
     title: `${dua.title} | Uns`,
-    description: dua.translation,
+    description: enTranslation,
     openGraph: {
       title: dua.title,
-      description: dua.translation,
+      description: enTranslation,
       type: 'article',
       images: [{ url: '/og-dua.jpg' }],
     },
@@ -88,25 +90,8 @@ export default async function DuaPage({ params }: Props) {
           </p>
         </section>
 
-        {/* Transliteration + Translation */}
-        <section aria-label="Dua meaning" className="grid md:grid-cols-2 gap-4 mb-12 animate-slide-up">
-          <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-8">
-            <p className="uppercase text-xs tracking-[2px] text-stone-500 mb-3">Transliteration</p>
-            <p className="italic text-[1.05rem] leading-relaxed text-stone-600 dark:text-stone-300">
-              {dua.transliteration}
-            </p>
-          </div>
-          <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-8">
-            <p className="uppercase text-xs tracking-[2px] text-stone-500 mb-3">Translation</p>
-            <p className="text-[1.05rem] leading-relaxed text-stone-700 dark:text-stone-200">
-              {dua.translation}
-            </p>
-          </div>
-        </section>
-
-        <p className="-mt-8 mb-12 max-w-2xl text-sm leading-7 text-stone-500 dark:text-stone-400">
-          The Arabic text stays unchanged; transliteration and translation can be adapted to the language that fits the verse most faithfully.
-        </p>
+        {/* Transliteration + Translation with Language Selector */}
+        <TranslationSection translations={dua.translations} />
 
         {/* Listen button */}
         <div className="flex justify-center mb-14">

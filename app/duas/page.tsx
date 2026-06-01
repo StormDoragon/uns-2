@@ -30,7 +30,7 @@ export default function DuasIndexPage() {
               <p className="mb-3 text-xs uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">{dua.category}</p>
               <h2 className="mb-4 font-serif text-3xl leading-tight">{dua.title}</h2>
               <p className="mb-5 font-amiri text-3xl leading-relaxed text-emerald-800 dark:text-emerald-200" lang="ar" dir="rtl">{dua.arabic}</p>
-              <p className="leading-7 text-stone-600 dark:text-stone-300">{dua.translation}</p>
+              <p className="leading-7 text-stone-600 dark:text-stone-300">{dua.translations.en?.translation || Object.values(dua.translations)[0]?.translation}</p>
             </Link>
           ))}
         </section>
