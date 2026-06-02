@@ -12,6 +12,11 @@ const themes = [
   'Relief', 'Divine mercy', 'Repentance', 'Gratitude',
 ]
 
+const duaEntries = allDuas.filter((entry) => entry.category !== 'The 6 Kalimas' && !entry.category.startsWith('Dhikr'))
+const dhikrEntries = allDuas.filter((entry) => entry.category.startsWith('Dhikr'))
+const kalimaEntries = allDuas.filter((entry) => entry.category === 'The 6 Kalimas')
+const featuredDuas = duaEntries.slice(0, 3)
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#f8f1e7] dark:bg-[#0a0f0d] text-stone-800 dark:text-stone-100">
@@ -54,10 +59,10 @@ export default function HomePage() {
             Begin with a Dua
           </Link>
           <Link
-            href="#foundational"
+            href="#paths"
             className="px-6 py-3 border border-stone-300 dark:border-stone-700 hover:border-stone-400 dark:hover:border-stone-600 rounded-2xl text-sm text-stone-600 dark:text-stone-400 transition-all"
           >
-            Foundational Duas
+            Learn the Path
           </Link>
         </div>
       </header>
@@ -83,10 +88,10 @@ export default function HomePage() {
       <section className="max-w-5xl mx-auto px-6 py-16">
         <h2 className="text-2xl font-serif text-stone-900 dark:text-stone-100 mb-2">Featured duas</h2>
         <p className="text-stone-500 dark:text-stone-500 text-sm mb-8">
-          Story, reflection, transliteration, and source for each.
+          Three starting points for difficult days.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {allDuas.map((dua, i) => (
+          {featuredDuas.map((dua, i) => (
             <Link
               key={dua.slug}
               href={`/duas/${dua.slug}`}
@@ -116,17 +121,68 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Foundational */}
-      <section id="foundational" className="max-w-5xl mx-auto px-6 pb-20">
-        <div className="bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 rounded-3xl p-10">
-          <h2 className="text-xl font-serif text-stone-900 dark:text-stone-100 mb-2">Foundational library</h2>
-          <p className="text-stone-500 dark:text-stone-500 text-sm mb-6">Now organized with dedicated entries for daily dhikr, supplications, and praises to Allah.</p>
-          <ul className="space-y-2 text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-            <li className="flex gap-3"><span className="text-emerald-600">—</span> Dhikr for tasbih, tahmid, takbir, tawhid, repentance, and reliance</li>
-            <li className="flex gap-3"><span className="text-emerald-600">—</span> Supplications for forgiveness, well-being, protection, family, and the Hereafter</li>
-            <li className="flex gap-3"><span className="text-emerald-600">—</span> Praises to Allah with reflections and source references</li>
-            <li className="flex gap-3"><span className="text-emerald-600">—</span> Qur’anic duas from prophetic moments of hardship, surrender, and mercy</li>
-          </ul>
+      {/* Learning paths */}
+      <section id="paths" className="max-w-5xl mx-auto px-6 pb-20">
+        <div className="grid gap-6 md:grid-cols-3">
+          <article className="rounded-3xl border border-stone-100 bg-white p-7 dark:border-stone-800 dark:bg-stone-900">
+            <p className="text-xs uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">Dua</p>
+            <h2 className="mt-2 text-2xl font-serif">Calling Allah directly</h2>
+            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
+              Dua is a personal call to Allah with need, trust, and honesty. It teaches dependence, softens anxiety,
+              and keeps the heart connected in both ease and hardship.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
+              Start slowly: read the Arabic once, then transliteration, then translation. Pause after each line and ask,
+              &ldquo;What is this teaching my heart right now?&rdquo;
+            </p>
+            <div className="mt-5 space-y-2 text-sm">
+              {duaEntries.slice(0, 3).map((entry) => (
+                <Link key={entry.slug} href={`/duas/${entry.slug}`} className="block text-emerald-700 transition-colors hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300">
+                  {entry.title}
+                </Link>
+              ))}
+            </div>
+          </article>
+
+          <article className="rounded-3xl border border-stone-100 bg-white p-7 dark:border-stone-800 dark:bg-stone-900">
+            <p className="text-xs uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">Dhikr</p>
+            <h2 className="mt-2 text-2xl font-serif">Remembering Allah often</h2>
+            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
+              Dhikr means remembering Allah by phrases of praise, glorification, and surrender. It steadies the mind,
+              reorders priorities, and gives daily spiritual grounding.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
+              Keep it consistent: choose one phrase, repeat with attention and presence, and let meaning settle before
+              increasing quantity.
+            </p>
+            <div className="mt-5 space-y-2 text-sm">
+              {dhikrEntries.slice(0, 3).map((entry) => (
+                <Link key={entry.slug} href={`/duas/${entry.slug}`} className="block text-emerald-700 transition-colors hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300">
+                  {entry.title}
+                </Link>
+              ))}
+            </div>
+          </article>
+
+          <article className="rounded-3xl border border-stone-100 bg-white p-7 dark:border-stone-800 dark:bg-stone-900">
+            <p className="text-xs uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">Kalima</p>
+            <h2 className="mt-2 text-2xl font-serif">Foundations of belief</h2>
+            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
+              The Kalimas summarize core beliefs: tawhid, testimony, glorification, repentance, and protection from
+              disbelief. They help anchor identity and direction.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
+              Read with reverence: understand each phrase first, then repeat with conviction. Let each kalima become a
+              lens for speech, decisions, and daily conduct.
+            </p>
+            <div className="mt-5 space-y-2 text-sm">
+              {kalimaEntries.slice(0, 3).map((entry) => (
+                <Link key={entry.slug} href={`/duas/${entry.slug}`} className="block text-emerald-700 transition-colors hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300">
+                  {entry.title}
+                </Link>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 
