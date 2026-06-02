@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const themes = [
   'Hardship', 'Illness', 'Surrender', 'Protection',
-  'Tawakkul', 'Rizq', 'Emotional overwhelm', 'Fear',
+  'Dhikr', 'Praise', 'Tawakkul', 'Rizq',
   'Relief', 'Divine mercy', 'Repentance', 'Gratitude',
 ]
 
@@ -120,12 +120,12 @@ export default function HomePage() {
       <section id="foundational" className="max-w-5xl mx-auto px-6 pb-20">
         <div className="bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 rounded-3xl p-10">
           <h2 className="text-xl font-serif text-stone-900 dark:text-stone-100 mb-2">Foundational library</h2>
-          <p className="text-stone-500 dark:text-stone-500 text-sm mb-6">Building soon.</p>
+          <p className="text-stone-500 dark:text-stone-500 text-sm mb-6">Now organized with dedicated entries for daily dhikr, supplications, and praises to Allah.</p>
           <ul className="space-y-2 text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
-            <li className="flex gap-3"><span className="text-emerald-600">—</span> Protection duas for morning, evening, home, and travel</li>
-            <li className="flex gap-3"><span className="text-emerald-600">—</span> Rizq duas with tawakkul-centred guidance</li>
-            <li className="flex gap-3"><span className="text-emerald-600">—</span> Remembrance duas for daily grounding</li>
-            <li className="flex gap-3"><span className="text-emerald-600">—</span> Healing duas for fear, fatigue, and emotional heaviness</li>
+            <li className="flex gap-3"><span className="text-emerald-600">—</span> Dhikr for tasbih, tahmid, takbir, tawhid, repentance, and reliance</li>
+            <li className="flex gap-3"><span className="text-emerald-600">—</span> Supplications for forgiveness, well-being, protection, family, and the Hereafter</li>
+            <li className="flex gap-3"><span className="text-emerald-600">—</span> Praises to Allah with reflections and source references</li>
+            <li className="flex gap-3"><span className="text-emerald-600">—</span> Qur’anic duas from prophetic moments of hardship, surrender, and mercy</li>
           </ul>
         </div>
       </section>

@@ -289,6 +289,285 @@ export const duasData: Record<string, Dua> = {
     guidance:
       'When you do not know what to ask, ask broadly and humbly. Let Allah choose the shape of ḥasanah for you in both homes. The Prophet ﷺ made this the most frequent of his duas — there is wisdom in its comprehensiveness.',
   },
+
+  'subhanallah': {
+    slug: 'subhanallah',
+    category: 'Dhikr & Tasbih',
+    title: 'SubhanAllah — Glory Be to Allah',
+    arabic: 'سُبْحَانَ اللَّهِ',
+    translations: {
+      en: {
+        transliteration: 'Subḥānallāh',
+        translation: 'Glory be to Allah.',
+      },
+    },
+    story:
+      'Tasbih is the remembrance by which the believer declares Allah far above every imperfection, weakness, injustice, and need. The Qur\'an repeatedly describes the heavens, earth, angels, and creation as glorifying Him, even when we do not understand their glorification. When the tongue says SubhanAllah, it joins a universe already in worship.',
+    reflection:
+      'SubhanAllah is a cleansing of how you see Allah. It removes from the heart every small, fearful, or unfair thought about Him. Say it when you witness beauty, when you are confused by decree, and when you need to remember that Allah is perfect even when your understanding is limited.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Al-Isra 17:44', authenticity: "Direct from Qur'an" },
+      { type: 'Hadith', ref: 'Sahih Muslim 2695', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Use this dhikr to glorify Allah in moments of wonder, prayer, or hardship. Let it correct the heart before it corrects the tongue: Allah is free from every flaw.',
+  },
+  'alhamdulillah': {
+    slug: 'alhamdulillah',
+    category: 'Dhikr & Gratitude',
+    title: 'Alhamdulillah — All Praise Is Due to Allah',
+    arabic: 'الْحَمْدُ لِلَّهِ',
+    translations: {
+      en: {
+        transliteration: 'Alḥamdulillāh',
+        translation: 'All praise is due to Allah.',
+      },
+    },
+    story:
+      'Hamd gathers praise and gratitude together. It is how the Qur\'an opens, how the people of Paradise speak, and how believers learn to recognize every blessing as coming from Allah. Alhamdulillah is not only for easy days; it is a way of affirming that Allah remains worthy of praise in every state.',
+    reflection:
+      'Gratitude is not denial of pain. It is the decision not to let pain become the only truth you can see. Alhamdulillah turns the heart toward the Giver before it counts the gifts. It teaches contentment without making you passive and hope without making you entitled.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Al-Fatihah 1:2', authenticity: "Direct from Qur'an" },
+      { type: 'Hadith', ref: 'Sahih Muslim 223', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Say it after blessings, after difficulty, and during ordinary moments you do not want to take for granted. Let every Alhamdulillah return the blessing to its Source.',
+  },
+  'allahu-akbar': {
+    slug: 'allahu-akbar',
+    category: 'Dhikr & Magnification',
+    title: 'Allahu Akbar — Allah Is the Greatest',
+    arabic: 'اللَّهُ أَكْبَرُ',
+    translations: {
+      en: {
+        transliteration: 'Allāhu akbar',
+        translation: 'Allah is the Greatest.',
+      },
+    },
+    story:
+      'Takbir magnifies Allah above every fear, desire, pressure, and worldly power. It is heard in the prayer, the adhan, Eid, and many moments of worship because the believer is always being invited to resize the world correctly: creation is small, and Allah is greater.',
+    reflection:
+      'Whatever dominates your thoughts can begin to feel ultimate. Allahu Akbar breaks that illusion. It does not mean your problems are unreal; it means they are not supreme. Say it until your fear, ambition, grief, and plans all stand in their proper place beneath the greatness of Allah.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Al-Isra 17:111', authenticity: "Direct from Qur'an" },
+      { type: 'Hadith', ref: 'Sahih Bukhari 843, Sahih Muslim 595', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Use this dhikr after prayer, when beginning acts of worship, and whenever a worldly concern feels too large. Magnify Allah, and let everything else shrink to its true size.',
+  },
+  'la-ilaha-illallah': {
+    slug: 'la-ilaha-illallah',
+    category: 'Dhikr & Tawhid',
+    title: 'La Ilaha Illallah — The Word of Oneness',
+    arabic: 'لَا إِلَٰهَ إِلَّا اللَّهُ',
+    translations: {
+      en: {
+        transliteration: 'Lā ilāha illallāh',
+        translation: 'There is no deity worthy of worship except Allah.',
+      },
+    },
+    story:
+      'This is the foundation of Islam and the core of every prophetic message. It negates every false object of worship and affirms worship for Allah alone. Every dua, act of trust, repentance, and praise is rooted in this truth.',
+    reflection:
+      'La ilaha illallah is not only a sentence to know; it is a life to return to. It asks the heart: what do you fear most, love most, obey most, and rely on most? The phrase frees you from being owned by creation and brings you back to the One who created you.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Muhammad 47:19', authenticity: "Direct from Qur'an" },
+      { type: 'Hadith', ref: 'Sunan at-Tirmidhi 3383', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Recite it with presence, especially when renewing faith, resisting fear, or remembering death. Let the tongue say it, and let the heart release whatever has been competing with Allah.',
+  },
+  'astaghfirullah': {
+    slug: 'astaghfirullah',
+    category: 'Dhikr & Repentance',
+    title: 'Astaghfirullah — I Seek Allah\'s Forgiveness',
+    arabic: 'أَسْتَغْفِرُ اللَّهَ',
+    translations: {
+      en: {
+        transliteration: 'Astaghfirullāh',
+        translation: 'I seek forgiveness from Allah.',
+      },
+    },
+    story:
+      'Istighfar is the doorway back after sins, heedlessness, harsh words, wasted time, and private failures. The Prophet ﷺ sought Allah\'s forgiveness often, teaching the ummah that repentance is not only for collapse; it is daily maintenance for a living heart.',
+    reflection:
+      'Astaghfirullah is hope in one word. It refuses despair and refuses arrogance at the same time. You are not pretending the sin was small, and you are not pretending Allah\'s mercy is small. You are returning because the door is still open.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Nuh 71:10', authenticity: "Direct from Qur'an" },
+      { type: 'Hadith', ref: 'Sahih Bukhari 6307', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Say it after mistakes, after prayer, and during quiet moments of self-accounting. Pair the words with leaving the sin, regret, and a sincere intention to return better.',
+  },
+  'la-hawla-wa-la-quwwata': {
+    slug: 'la-hawla-wa-la-quwwata',
+    category: 'Dhikr & Reliance',
+    title: 'La Hawla Wa La Quwwata Illa Billah — Strength Is Only With Allah',
+    arabic: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',
+    translations: {
+      en: {
+        transliteration: 'Lā ḥawla wa lā quwwata illā billāh',
+        translation: 'There is no power and no strength except with Allah.',
+      },
+    },
+    story:
+      'The Prophet ﷺ described this remembrance as a treasure from the treasures of Paradise. It is a confession that movement away from sin and strength toward obedience are not produced by ego, talent, or planning alone; they are granted by Allah.',
+    reflection:
+      'This dhikr is for the moment you realize willpower is not enough. It does not make you helpless; it makes you honest. You still stand, act, work, apologize, endure, and strive — but you stop pretending the strength came from you independently.',
+    sources: [
+      { type: 'Hadith', ref: 'Sahih Bukhari 6384, Sahih Muslim 2704', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Recite it when facing temptation, exhaustion, difficult responsibilities, or anything that feels beyond you. It is a dhikr of surrender that gives courage rather than resignation.',
+  },
+  'subhanallahi-wa-bihamdihi-subhanallahil-adheem': {
+    slug: 'subhanallahi-wa-bihamdihi-subhanallahil-adheem',
+    category: 'Dhikr & Praise',
+    title: 'Two Beloved Words — Light on the Tongue',
+    arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ',
+    translations: {
+      en: {
+        transliteration: 'Subḥānallāhi wa biḥamdih, subḥānallāhil-ʿaẓīm',
+        translation: 'Glory is to Allah and praise is to Him; glory is to Allah, the Most Great.',
+      },
+    },
+    story:
+      'The Prophet ﷺ taught that these two statements are light on the tongue, heavy on the scale, and beloved to the Most Merciful. Their beauty is in their balance: glorification, praise, and recognition of Allah\'s greatness in words a believer can carry throughout the day.',
+    reflection:
+      'Not every heavy deed feels heavy while you are doing it. Sometimes the most beloved words are simple enough to say while walking, driving, cleaning, or waiting. This dhikr teaches you not to underestimate small acts when they are beloved to Allah.',
+    sources: [
+      { type: 'Hadith', ref: 'Sahih Bukhari 6406, Sahih Muslim 2694', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Repeat it often during open spaces in your day. Let it become a quiet companion: easy for the tongue, weighty for the meeting with Allah.',
+  },
+  'allahumma-afwa-wal-afiyah': {
+    slug: 'allahumma-afwa-wal-afiyah',
+    category: 'Dua & Well-being',
+    title: 'Allahumma Inni As’aluka Al-‘Afwa Wal-‘Afiyah',
+    arabic: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ',
+    translations: {
+      en: {
+        transliteration: "Allāhumma innī as'aluka al-ʿafwa wal-ʿāfiyah",
+        translation: 'O Allah, I ask You for pardon and well-being.',
+      },
+    },
+    story:
+      'This concise dua asks for two immense gifts: that Allah pardon what is wrong and preserve what is well. The Prophet ﷺ taught supplications for asking Allah for pardon and well-being in religion, worldly life, family, and wealth because people need mercy both for what has happened and for what may come.',
+    reflection:
+      'We often ask for specific outcomes because we see only one corner of our lives. This dua asks for something wider: forgiveness that removes harm from the past and well-being that protects the present and future. It is a humble way of saying, O Allah, give me safety in the ways You know I need it most.',
+    sources: [
+      { type: 'Hadith', ref: 'Sunan Abi Dawud 5074, Sunan Ibn Majah 3871', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Make it part of your morning, evening, and private duas. Ask not only for health of the body, but for well-being in faith, family, mind, provision, and the Hereafter.',
+  },
+  'rabbighfir-li-waliwalidayya': {
+    slug: 'rabbighfir-li-waliwalidayya',
+    category: 'Dua & Forgiveness',
+    title: 'Forgive Me, My Parents, and the Believers',
+    arabic: 'رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ',
+    translations: {
+      en: {
+        transliteration: "Rabbighfir lī wa liwālidayya wa lil-mu'minīna yawma yaqūmul-ḥisāb",
+        translation: 'My Lord, forgive me, my parents, and the believers on the Day the reckoning is established.',
+      },
+    },
+    story:
+      'This Qur\'anic dua of Ibrahim عليه السلام widens personal repentance into mercy for family and the believing community. It remembers the Day of Reckoning, when every person will need Allah\'s forgiveness more than any worldly help.',
+    reflection:
+      'A soft heart does not ask only for itself. This dua teaches you to carry your parents and the believers into your private supplications. Even if family relationships are complicated, asking Allah for forgiveness keeps the heart connected to mercy and the Hereafter.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Ibrahim 14:41', authenticity: "Direct from Qur'an" },
+    ],
+    guidance:
+      'Recite it for yourself, your parents, and the ummah. It is especially fitting after prayer, when remembering deceased loved ones, or when your heart needs to become larger than its own worries.',
+  },
+  'allahumma-ajirni-minan-naar': {
+    slug: 'allahumma-ajirni-minan-naar',
+    category: 'Dua & Protection',
+    title: 'Allahumma Ajirni Minan-Nar — Protect Me from the Fire',
+    arabic: 'اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ',
+    translations: {
+      en: {
+        transliteration: 'Allāhumma ajirnī minan-nār',
+        translation: 'O Allah, protect me from the Fire.',
+      },
+    },
+    story:
+      'Seeking refuge from the Fire is one of the most serious requests a believer can make. It gathers fear of Allah, hope in His mercy, and awareness that salvation is not earned by confidence in oneself but granted by Allah\'s grace.',
+    reflection:
+      'This dua restores the scale of life. Many anxieties are real, but the greatest protection is protection in the Hereafter. Asking to be saved from the Fire makes repentance urgent, softens pride, and reminds the heart that Allah\'s mercy is the refuge being sought.',
+    sources: [
+      { type: 'Hadith', ref: 'Sunan Abi Dawud 5079', authenticity: 'Reported; grading differed among scholars' },
+    ],
+    guidance:
+      'Use it in your personal duas and moments of repentance. If following a specific numbered routine from a narration, do so with awareness that scholars differed over the report\'s grading.',
+  },
+  'refuge-from-life-death-dajjal': {
+    slug: 'refuge-from-life-death-dajjal',
+    category: 'Dua & Protection',
+    title: 'Protection from the Trials of Life, Death, and Dajjal',
+    arabic: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ وَفِتْنَةِ الْمَسِيحِ الدَّجَّالِ',
+    translations: {
+      en: {
+        transliteration: "Allāhumma innī aʿūdhu bika min fitnatil-maḥyā wal-mamāt wa fitnatil-masīḥid-dajjāl",
+        translation: 'O Allah, I seek refuge in You from the trials of life and death and from the trial of the False Messiah.',
+      },
+    },
+    story:
+      'The Prophet ﷺ taught believers to seek Allah\'s protection from immense trials, including the fitnah of life, death, and the False Messiah. This dua is commonly recited near the end of the prayer before taslim, when the servant is already in a posture of nearness and need.',
+    reflection:
+      'Not every danger looks like danger when it arrives. Some trials come as pressure, confusion, charisma, fear, or false certainty. This supplication admits that the believer needs Allah to protect both the visible life and the unseen moments of death and resurrection.',
+    sources: [
+      { type: 'Hadith', ref: 'Sahih Bukhari 1377, Sahih Muslim 588', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Recite it before ending the prayer and in private supplication. Ask Allah not only to remove trials, but to keep your heart clear when trials cannot be avoided.',
+  },
+  'alhamdulillahi-rabbil-alamin': {
+    slug: 'alhamdulillahi-rabbil-alamin',
+    category: 'Praise & Gratitude',
+    title: 'Alhamdulillahi Rabbil ‘Alamin — Lord of All Worlds',
+    arabic: 'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ',
+    translations: {
+      en: {
+        transliteration: 'Alḥamdulillāhi Rabbil-ʿālamīn',
+        translation: 'All praise is due to Allah, Lord of all the worlds.',
+      },
+    },
+    story:
+      'These are the opening words of Surah Al-Fatihah after the basmalah, placing praise at the beginning of the believer\'s conversation with Allah. He is not only your Lord in a private sense; He is Rabbul-ʿalamin, the Lord, Sustainer, Nurturer, and Owner of every world and every being.',
+    reflection:
+      'When life feels centered on your own small circle, this praise expands your vision. Allah is caring for what you see and what you cannot see. Your story is held inside a much greater dominion, and the Lord of all worlds is still near enough to hear Al-Fatihah from your tongue.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Al-Fatihah 1:2', authenticity: "Direct from Qur'an" },
+    ],
+    guidance:
+      'Recite it in prayer with awareness and outside prayer as a complete praise. Let it remind you that Allah\'s lordship is both vast over creation and intimate over your life.',
+  },
+  'subhanaka-allahumma-wa-bihamdika': {
+    slug: 'subhanaka-allahumma-wa-bihamdika',
+    category: 'Praise & Repentance',
+    title: 'Subhanaka Allahumma Wa Bihamdika — Closing with Praise',
+    arabic: 'سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ',
+    translations: {
+      en: {
+        transliteration: 'Subḥānaka Allāhumma wa biḥamdik, ash-hadu an lā ilāha illā ant, astaghfiruka wa atūbu ilayk',
+        translation: 'Glory and praise be to You, O Allah. I bear witness that there is no deity but You. I seek Your forgiveness and turn to You in repentance.',
+      },
+    },
+    story:
+      'This supplication is known as an expiation for gatherings. It closes speech and action with tasbih, hamd, tawhid, istighfar, and tawbah — a beautiful admission that even beneficial gatherings can contain slips, heedlessness, or words that need Allah\'s pardon.',
+    reflection:
+      'Endings matter. This dua teaches the believer not to leave a gathering impressed with the self, but in need of Allah. After speaking, learning, meeting, or working, the heart returns with praise and repentance: whatever was good was from Allah, and whatever was flawed needs His forgiveness.',
+    sources: [
+      { type: 'Hadith', ref: 'Sunan Abi Dawud 4859, Sunan at-Tirmidhi 3433', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Say it at the end of gatherings, study circles, meetings, or meaningful conversations. It is a gentle way to close with humility, gratitude, and return.',
+  },
   'tahlil-complete': {
     slug: 'tahlil-complete',
     category: 'Remembrance & Gratitude',
