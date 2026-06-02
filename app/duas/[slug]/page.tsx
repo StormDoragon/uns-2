@@ -19,13 +19,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const dua = getDua(slug)
   if (!dua) return {}
-  const enTranslation = dua.translations.en?.translation || Object.values(dua.translations)[0]?.translation || ''
   return {
     title: `${dua.title} | Uns`,
-    description: enTranslation,
+    description: dua.translation,
     openGraph: {
       title: dua.title,
-      description: enTranslation,
+      description: dua.translation,
       type: 'article',
       images: [{ url: '/og-dua.jpg' }],
     },
@@ -90,8 +89,8 @@ export default async function DuaPage({ params }: Props) {
           </p>
         </section>
 
-        {/* Transliteration + Translation with Language Selector */}
-        <TranslationSection translations={dua.translations} />
+        {/* Transliteration + Translation */}
+        <TranslationSection transliteration={dua.transliteration} translation={dua.translation} />
 
         {/* Listen button */}
         <div className="flex justify-center mb-14">

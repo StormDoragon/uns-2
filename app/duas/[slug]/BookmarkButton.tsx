@@ -3,20 +3,41 @@
 import { Bookmark } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
+const STORAGE_KEY = 'uns-bookmarks'
+
+function readBookmarks(): string[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) return []
+
+    const parsed: unknown = JSON.parse(raw)
+    return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === 'string') : []
+  } catch {
+    return []
+  }
+}
+
+function writeBookmarks(bookmarks: string[]): void {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(bookmarks))
+  } catch {
+    // Storage can be unavailable or full in some environments.
+  }
+}
+
 export default function BookmarkButton({ slug, title }: { slug: string; title: string }) {
   const [saved, setSaved] = useState(false)
 
   useEffect(() => {
-    const bookmarks: string[] = JSON.parse(localStorage.getItem('uns-bookmarks') ?? '[]')
-    setSaved(bookmarks.includes(slug))
+    setSaved(readBookmarks().includes(slug))
   }, [slug])
 
   const toggle = () => {
-    const bookmarks: string[] = JSON.parse(localStorage.getItem('uns-bookmarks') ?? '[]')
+    const bookmarks = readBookmarks()
     const next = saved
       ? bookmarks.filter((s) => s !== slug)
       : [...bookmarks, slug]
-    localStorage.setItem('uns-bookmarks', JSON.stringify(next))
+    writeBookmarks(next)
     setSaved(!saved)
   }
 
