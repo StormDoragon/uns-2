@@ -134,7 +134,7 @@ export const duasData: Record<string, Dua> = {
   },
   'subhanallah': {
     slug: 'subhanallah',
-    category: 'Dhikr & Glorification',
+    category: 'Dhikr',
     title: 'SubhanAllah — Glory Be to Allah',
     arabic: 'سُبْحَانَ اللَّهِ',
     transliteration: 'SubḥānAllāh',
@@ -152,7 +152,7 @@ export const duasData: Record<string, Dua> = {
   },
   'alhamdulillah': {
     slug: 'alhamdulillah',
-    category: 'Dhikr & Gratitude',
+    category: 'Dhikr',
     title: 'Alhamdulillah — All Praise Is Due to Allah',
     arabic: 'الْحَمْدُ لِلَّهِ',
     transliteration: 'Alḥamdulillāh',
@@ -170,7 +170,7 @@ export const duasData: Record<string, Dua> = {
   },
   'allahu-akbar': {
     slug: 'allahu-akbar',
-    category: 'Dhikr & Magnification',
+    category: 'Dhikr',
     title: 'Allahu Akbar — Allah Is the Greatest',
     arabic: 'اللَّهُ أَكْبَرُ',
     transliteration: 'Allāhu Akbar',
@@ -188,7 +188,7 @@ export const duasData: Record<string, Dua> = {
   },
   'la-ilaha-illallah': {
     slug: 'la-ilaha-illallah',
-    category: 'Dhikr & Tawhid',
+    category: 'Dhikr',
     title: 'La Ilaha Illallah — The Word of Oneness',
     arabic: 'لَا إِلَٰهَ إِلَّا اللَّهُ',
     transliteration: 'Lā ilāha illallāh',
@@ -206,7 +206,7 @@ export const duasData: Record<string, Dua> = {
   },
   'astaghfirullah': {
     slug: 'astaghfirullah',
-    category: 'Dhikr & Repentance',
+    category: 'Dhikr',
     title: 'Astaghfirullah — I Seek Allah’s Forgiveness',
     arabic: 'أَسْتَغْفِرُ اللَّهَ',
     transliteration: 'Astaghfirullāh',
@@ -224,7 +224,7 @@ export const duasData: Record<string, Dua> = {
   },
   'la-hawla-wa-la-quwwata': {
     slug: 'la-hawla-wa-la-quwwata',
-    category: 'Dhikr & Reliance',
+    category: 'Dhikr',
     title: 'La Hawla Wa La Quwwata Illa Billah — Strength Is Only with Allah',
     arabic: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',
     transliteration: 'Lā ḥawla wa lā quwwata illā billāh',
@@ -241,7 +241,7 @@ export const duasData: Record<string, Dua> = {
   },
   'subhanallahi-wa-bihamdihi-subhanallahil-adheem': {
     slug: 'subhanallahi-wa-bihamdihi-subhanallahil-adheem',
-    category: 'Dhikr & Praise',
+    category: 'Dhikr',
     title: 'Beloved Words — Light on the Tongue, Heavy on the Scale',
     arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ',
     transliteration: 'SubḥānAllāhi wa biḥamdihi, SubḥānAllāhil-ʿAẓīm',
@@ -258,7 +258,7 @@ export const duasData: Record<string, Dua> = {
   },
   'tahlil-complete': {
     slug: 'tahlil-complete',
-    category: 'Remembrance & Gratitude',
+    category: 'Dhikr',
     title: 'Tahlil — The Complete Declaration of Oneness',
     arabic:
       'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',

@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 import { allDuas } from '@/lib/duas'
 
 export const metadata: Metadata = {
-  title: 'All Duas | Uns',
+  title: 'All Duas',
   description: 'Browse authentic duas with story, reflection, and guidance.',
 }
 
