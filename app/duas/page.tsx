@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: 'Browse authentic duas with story, reflection, and guidance.',
 }
 
+const kalimas = allDuas.filter((dua) => dua.category === 'The 6 Kalimas')
+const otherDuas = allDuas.filter((dua) => dua.category !== 'The 6 Kalimas')
+
 export default function DuasIndexPage() {
   return (
     <main className="min-h-screen bg-[#f8f1e7] px-6 py-12 text-stone-800 dark:bg-[#0a0f0d] dark:text-stone-100">
@@ -24,8 +27,29 @@ export default function DuasIndexPage() {
           </p>
         </header>
 
+        {kalimas.length > 0 && (
+          <section className="mb-10">
+            <div className="mb-5 flex items-end justify-between gap-4">
+              <h2 className="font-serif text-3xl leading-tight">The 6 Kalimas</h2>
+              <span className="rounded-full border border-stone-200 px-3 py-1 text-xs text-stone-500 dark:border-stone-800 dark:text-stone-400">
+                {kalimas.length} entries
+              </span>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {kalimas.map((dua) => (
+                <Link key={dua.slug} href={`/duas/${dua.slug}`} className="rounded-3xl border border-stone-200 bg-white p-7 shadow-sm transition-transform hover:-translate-y-1 dark:border-stone-800 dark:bg-stone-900">
+                  <p className="mb-3 text-xs uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">{dua.category}</p>
+                  <h3 className="mb-4 font-serif text-3xl leading-tight">{dua.title}</h3>
+                  <p className="mb-5 font-amiri text-3xl leading-relaxed text-emerald-800 dark:text-emerald-200" lang="ar" dir="rtl">{dua.arabic}</p>
+                  <p className="leading-7 text-stone-600 dark:text-stone-300">{dua.translation}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
         <section className="grid gap-6 md:grid-cols-2">
-          {allDuas.map((dua) => (
+          {otherDuas.map((dua) => (
             <Link key={dua.slug} href={`/duas/${dua.slug}`} className="rounded-3xl border border-stone-200 bg-white p-7 shadow-sm transition-transform hover:-translate-y-1 dark:border-stone-800 dark:bg-stone-900">
               <p className="mb-3 text-xs uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">{dua.category}</p>
               <h2 className="mb-4 font-serif text-3xl leading-tight">{dua.title}</h2>
