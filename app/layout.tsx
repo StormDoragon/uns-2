@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   description:
     'Uns is a resting place for tired hearts: authentic duas with meaning, context, and reflection.',
-  metadataBase: new URL('https://uns.app'),
+  metadataBase: new URL('https://uns-2.vercel.app'),
   openGraph: {
     title: 'Uns — A Resting Place for Tired Hearts',
     description:
