@@ -1,16 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { allDuas } from '@/lib/duas'
+import { allSituations } from '@/lib/situations'
 
 export const metadata: Metadata = {
   title: 'Uns — A Resting Place for Tired Hearts',
 }
-
-const themes = [
-  'Hardship', 'Illness', 'Surrender', 'Protection',
-  'Dhikr', 'Praise', 'Tawakkul', 'Rizq',
-  'Relief', 'Divine mercy', 'Repentance', 'Gratitude',
-]
 
 const paths = [
   {
@@ -39,10 +34,9 @@ const paths = [
   },
 ]
 
-// Featured: first 3 non-Kalima, non-Dhikr duas
 const featured = allDuas
   .filter((d) => !d.category.includes('Kalima') && !d.category.includes('Dhikr'))
-  .slice(0, 3)
+  .slice(0, 6)
 
 export default function HomePage() {
   const duaMap = Object.fromEntries(allDuas.map((d) => [d.slug, d]))
@@ -55,12 +49,20 @@ export default function HomePage() {
         <span className="text-2xl font-semibold tracking-tight text-stone-900 dark:text-stone-100">
           Uns
         </span>
-        <Link
-          href="/duas"
-          className="text-sm text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
-        >
-          All Duas →
-        </Link>
+        <div className="flex items-center gap-6">
+          <Link
+            href="/situations"
+            className="text-sm text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+          >
+            By Situation
+          </Link>
+          <Link
+            href="/duas"
+            className="text-sm text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+          >
+            All Duas →
+          </Link>
+        </div>
       </nav>
 
       {/* Hero */}
@@ -78,37 +80,43 @@ export default function HomePage() {
           className="text-xl text-stone-500 dark:text-stone-400 max-w-xl leading-relaxed mb-10 animate-fade-in"
           style={{ animationDelay: '0.2s' }}
         >
-          Uns is a space for hardship, illness, surrender, and mercy — each dua with its story, transliteration, and reflection.
+          Authentic duas, timeless words, and reflections that reconnect the heart to Allah.
         </p>
         <div className="flex flex-wrap gap-3 animate-fade-in" style={{ animationDelay: '0.3s' }}>
           <Link
             href="/duas"
             className="px-6 py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-2xl text-sm font-medium transition-all active:scale-[0.98]"
           >
-            Begin with a Dua
+            Explore Duas
           </Link>
           <Link
-            href="#paths"
+            href="/situations"
             className="px-6 py-3 border border-stone-300 dark:border-stone-700 hover:border-stone-400 dark:hover:border-stone-600 rounded-2xl text-sm text-stone-600 dark:text-stone-400 transition-all"
           >
-            Learn the Path
+            Find a Dua for My Situation
           </Link>
         </div>
       </header>
 
-      {/* Theme tags */}
+      {/* Emotional discovery */}
       <section className="max-w-5xl mx-auto px-6 pb-16 border-b border-stone-200 dark:border-stone-800">
-        <p className="text-xs uppercase tracking-[0.15em] text-stone-400 mb-4 font-medium">
-          What Uns is built for
+        <p className="text-xs uppercase tracking-[0.15em] text-stone-400 mb-2 font-medium">
+          Find by feeling
         </p>
-        <div className="flex flex-wrap gap-2">
-          {themes.map((t) => (
-            <span
-              key={t}
-              className="px-4 py-1.5 border border-stone-200 dark:border-stone-800 rounded-full text-sm text-stone-600 dark:text-stone-400"
+        <h2 className="text-2xl font-serif text-stone-900 dark:text-stone-100 mb-8">
+          What brings you here today?
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          {allSituations.map((situation) => (
+            <Link
+              key={situation.slug}
+              href={`/situations/${situation.slug}`}
+              className="group block bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 rounded-2xl px-5 py-4 hover:border-emerald-200 dark:hover:border-emerald-900 hover:shadow-sm transition-all text-center"
             >
-              {t}
-            </span>
+              <span className="text-sm font-medium text-stone-700 dark:text-stone-300 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                {situation.cardLabel}
+              </span>
+            </Link>
           ))}
         </div>
       </section>
@@ -119,7 +127,7 @@ export default function HomePage() {
           Featured duas
         </h2>
         <p className="text-stone-500 dark:text-stone-500 text-sm mb-8">
-          Three starting points for difficult days.
+          Starting points for difficult days.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {featured.map((dua, i) => (
@@ -139,13 +147,13 @@ export default function HomePage() {
                 lang="ar"
                 dir="rtl"
               >
-                {dua.arabic.split(' ').slice(0, 5).join(' ')}…
+                {dua.arabic.split(' ').slice(0, 5).join(' ')}\u2026
               </p>
               <p className="text-sm text-stone-500 dark:text-stone-500 leading-relaxed line-clamp-2">
                 {dua.translation}
               </p>
               <p className="mt-4 text-xs text-stone-400 dark:text-stone-600 group-hover:text-emerald-600 dark:group-hover:text-emerald-500 transition-colors">
-                Read more →
+                Read more \u2192
               </p>
             </Link>
           ))}
@@ -194,7 +202,7 @@ export default function HomePage() {
                       <span className="text-sm font-medium text-stone-700 dark:text-stone-300 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                         {dua.title}
                       </span>
-                      <span className="text-stone-300 dark:text-stone-600 group-hover:text-emerald-400 transition-colors text-sm">→</span>
+                      <span className="text-stone-300 dark:text-stone-600 group-hover:text-emerald-400 transition-colors text-sm">\u2192</span>
                     </Link>
                   ))}
                 </div>
@@ -205,7 +213,7 @@ export default function HomePage() {
       </section>
 
       <footer className="text-center py-10 text-sm text-stone-400 border-t border-stone-200 dark:border-stone-800">
-        <p>Uns — Not a database. A companion for return.</p>
+        <p>Uns \u2014 Not a database. A companion for return.</p>
       </footer>
     </div>
   )

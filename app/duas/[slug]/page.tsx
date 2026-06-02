@@ -107,6 +107,21 @@ export default async function DuaPage({ params }: Props) {
           </div>
         </section>
 
+        {/* Tags */}
+        {dua.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-10 animate-fade-in">
+            {dua.tags.map((tag) => (
+              <Link
+                key={tag}
+                href={`/situations/${tag}`}
+                className="px-3 py-1.5 rounded-full border border-stone-200 dark:border-stone-700 text-xs text-stone-500 dark:text-stone-400 hover:border-emerald-300 dark:hover:border-emerald-700 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors capitalize"
+              >
+                {tag}
+              </Link>
+            ))}
+          </div>
+        )}
+
         {/* Story */}
         <section className="mb-10 animate-fade-in">
           <div className="flex items-center gap-3 mb-4">

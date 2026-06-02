@@ -15,6 +15,7 @@ export interface Dua {
   reflection: string
   sources: DuaSource[]
   guidance: string
+  tags: string[]
 }
 
 export const duasData: Record<string, Dua> = {
@@ -34,6 +35,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Recite this dua when illness, chronic pain, or suffering feels endless. It is particularly powerful when you feel you have no more words — because these few words carry everything.',
+    tags: ['illness', 'suffering', 'hardship', 'patience', 'mercy'],
   },
   'dua-of-yunus': {
     slug: 'dua-of-yunus',
@@ -57,6 +59,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Recite this with full presence during overwhelming distress. The Prophet ﷺ said: "No Muslim calls upon Allah with it in any matter except that Allah responds to him."',
+    tags: ['distress', 'repentance', 'forgiveness', 'hardship', 'hope'],
   },
   'dua-for-anxiety': {
     slug: 'dua-for-anxiety',
@@ -78,6 +81,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Recite seven times morning and evening, and especially when the chest tightens. The Prophet ﷺ said: "Whoever says this seven times every morning and evening, Allah will take care of whatever worries him."',
+    tags: ['anxiety', 'fear', 'tawakkul', 'trust', 'hardship'],
   },
   'dua-of-ibrahim': {
     slug: 'dua-of-ibrahim',
@@ -96,6 +100,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Say this when you have done what you can, and what remains is beyond your hands. When results are out of your control, when a decision has been made, when all you can do is wait — this is that dua.',
+    tags: ['tawakkul', 'surrender', 'trust', 'hardship'],
   },
   'dua-for-relief': {
     slug: 'dua-for-relief',
@@ -113,6 +118,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Use this dua when you are at the end of yourself — emotionally, spiritually, physically. It is specifically for the moments when human effort has reached its limit.',
+    tags: ['overwhelm', 'exhaustion', 'hardship', 'patience'],
   },
   'dua-for-protection': {
     slug: 'dua-for-protection',
@@ -131,6 +137,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Recite when facing a threat — financial, social, physical, or spiritual. The Prophet ﷺ said Ibrahim عليه السلام said this when thrown into the fire, and Muhammad ﷺ said it when warned of an enemy army.',
+    tags: ['protection', 'fear', 'trust', 'tawakkul'],
   },
   'subhanallah': {
     slug: 'subhanallah',
@@ -149,6 +156,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Use this dhikr when you see beauty, witness Allah\'s signs, or need to remind your heart that Allah is perfect in every name, attribute, command, and decree.',
+    tags: ['dhikr', 'glorification', 'remembrance', 'praise'],
   },
   'alhamdulillah': {
     slug: 'alhamdulillah',
@@ -167,6 +175,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Say it after blessings, after relief, after hardship, and in ordinary moments. Let it become the phrase that trains your heart to see Allah\'s generosity everywhere.',
+    tags: ['dhikr', 'gratitude', 'praise', 'remembrance'],
   },
   'allahu-akbar': {
     slug: 'allahu-akbar',
@@ -185,6 +194,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Use this dhikr when fear becomes loud, when blessings amaze you, and when you need to return your attention from the size of creation to the greatness of the Creator.',
+    tags: ['dhikr', 'magnification', 'remembrance', 'fear'],
   },
   'la-ilaha-illallah': {
     slug: 'la-ilaha-illallah',
@@ -203,6 +213,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Repeat it with presence when you want to renew faith, fight attachment, or return your heart to the One who alone deserves worship.',
+    tags: ['dhikr', 'tawhid', 'remembrance', 'faith'],
   },
   'astaghfirullah': {
     slug: 'astaghfirullah',
@@ -221,6 +232,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Use it after sins, after heedlessness, after worship, and throughout the day. Let it be a soft turning back before the heart becomes hard.',
+    tags: ['dhikr', 'repentance', 'forgiveness', 'remembrance'],
   },
   'la-hawla-wa-la-quwwata': {
     slug: 'la-hawla-wa-la-quwwata',
@@ -238,6 +250,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Say it when a matter feels too heavy, when obedience feels difficult, when avoiding sin feels hard, or when you need to remember that every real strength comes from Allah.',
+    tags: ['dhikr', 'reliance', 'hardship', 'exhaustion'],
   },
   'subhanallahi-wa-bihamdihi-subhanallahil-adheem': {
     slug: 'subhanallahi-wa-bihamdihi-subhanallahil-adheem',
@@ -255,6 +268,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Repeat it during commutes, pauses, chores, or quiet moments. Let its ease encourage consistency rather than carelessness.',
+    tags: ['dhikr', 'glorification', 'praise', 'remembrance'],
   },
   'tahlil-complete': {
     slug: 'tahlil-complete',
@@ -284,6 +298,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Recite 100 times in the morning for full-day protection and enormous reward. Also recite after every obligatory prayer (10 times), and whenever the heart feels distant, scattered, or overwhelmed — this dhikr re-centres the soul on what is true.',
+    tags: ['dhikr', 'remembrance', 'gratitude', 'tawhid'],
   },
 
   // ─── The 6 Kalimas ───────────────────────────────────────────────
@@ -305,6 +320,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'This is the Kalima of entrance into Islam and the foundation of all dhikr. Recite it as the heart of your morning and evening remembrance, and return to it whenever faith feels distant. The Prophet ﷺ said renewing it regularly renews faith itself.',
+    tags: ['kalima', 'tawhid', 'faith', 'foundation'],
   },
 
   'kalima-shahadat': {
@@ -327,6 +343,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Recited in the Tashahhud of every prayer and in the adhān. Say it with full awareness — not as a formula but as a renewed act of witnessing. It is also the recommended final statement for the dying.',
+    tags: ['kalima', 'testimony', 'faith', 'tawhid'],
   },
 
   'kalima-tamjeed': {
@@ -349,6 +366,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'The Prophet ﷺ recommended these phrases after every prayer and before sleep. The ḥawqala — the final clause — is especially recommended during difficulty, when climbing, when overwhelmed, or when feeling powerless.',
+    tags: ['kalima', 'glorification', 'dhikr', 'faith'],
   },
 
   'kalima-tauheed': {
@@ -371,6 +389,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Recite this after Fajr and Maghrib prayers, and especially at times when the reality of mortality feels close. The Prophet ﷺ said these words erase sins even if they are as numerous as the foam of the sea.',
+    tags: ['kalima', 'tawhid', 'faith', 'mortality'],
   },
 
   'kalima-astaghfar': {
@@ -393,6 +412,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Recite in the morning, before sleep, and especially after times when you sense you may have fallen short — in speech, in action, or in thought. The sayyid al-istighfār (master supplication for forgiveness) complements this Kalima and can be recited alongside it.',
+    tags: ['kalima', 'repentance', 'forgiveness', 'faith'],
   },
 
   'kalima-radde-kufr': {
@@ -415,6 +435,7 @@ export const duasData: Record<string, Dua> = {
     ],
     guidance:
       'Recite in the morning as a daily renewal of your commitment and as a shield against the subtle corruptions that erode faith over time. It is especially powerful after moments of spiritual weakness or after you have noticed yourself slipping in speech or conduct.',
+    tags: ['kalima', 'faith', 'protection', 'repentance'],
   },
 }
 
