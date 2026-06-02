@@ -132,6 +132,130 @@ export const duasData: Record<string, Dua> = {
     guidance:
       'Recite when facing a threat — financial, social, physical, or spiritual. The Prophet ﷺ said Ibrahim عليه السلام said this when thrown into the fire, and Muhammad ﷺ said it when warned of an enemy army.',
   },
+  'subhanallah': {
+    slug: 'subhanallah',
+    category: 'Dhikr & Glorification',
+    title: 'SubhanAllah — Glory Be to Allah',
+    arabic: 'سُبْحَانَ اللَّهِ',
+    transliteration: 'SubḥānAllāh',
+    translation: 'Glory be to Allah.',
+    story:
+      'This short remembrance is one of the foundational words of dhikr. It declares Allah far above every imperfection, weakness, injustice, need, or limit. The Prophet ﷺ taught tasbih alongside tahmid and takbir as words to say after prayer and throughout the day, so the tongue keeps returning to the perfection of its Lord.',
+    reflection:
+      'SubhanAllah is a way of cleaning the heart\'s view of Allah. When life feels confusing, it reminds you that Allah is not like creation: His wisdom is complete, His mercy is pure, and His decree is never flawed.',
+    sources: [
+      { type: 'Hadith', ref: 'Sahih Muslim 597', authenticity: 'Authentic' },
+      { type: 'Hadith', ref: 'Sahih Muslim 2695', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Use this dhikr when you see beauty, witness Allah\'s signs, or need to remind your heart that Allah is perfect in every name, attribute, command, and decree.',
+  },
+  'alhamdulillah': {
+    slug: 'alhamdulillah',
+    category: 'Dhikr & Gratitude',
+    title: 'Alhamdulillah — All Praise Is Due to Allah',
+    arabic: 'الْحَمْدُ لِلَّهِ',
+    transliteration: 'Alḥamdulillāh',
+    translation: 'All praise is due to Allah.',
+    story:
+      'Alhamdulillah is the language of gratitude, praise, and recognition. It is how the Qur\'an opens in Surah Al-Fatihah, and it is a phrase the believer returns to in ease and hardship because Allah remains worthy of praise in every state.',
+    reflection:
+      'Gratitude is not only a response to receiving what you wanted. It is the recognition that every breath, every hidden protection, every delayed harm, and every door to repentance is from Allah.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Al-Fatihah 1:2', authenticity: "Direct from Qur'an" },
+      { type: 'Hadith', ref: 'Sahih Muslim 223', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Say it after blessings, after relief, after hardship, and in ordinary moments. Let it become the phrase that trains your heart to see Allah\'s generosity everywhere.',
+  },
+  'allahu-akbar': {
+    slug: 'allahu-akbar',
+    category: 'Dhikr & Magnification',
+    title: 'Allahu Akbar — Allah Is the Greatest',
+    arabic: 'اللَّهُ أَكْبَرُ',
+    transliteration: 'Allāhu Akbar',
+    translation: 'Allah is the Greatest.',
+    story:
+      'The words Allahu Akbar begin the prayer and echo through the greatest acts of worship. They remind the believer that Allah is greater than every fear, achievement, attachment, enemy, desire, and difficulty.',
+    reflection:
+      'Saying Allahu Akbar does not make problems disappear; it puts them in their proper size. This dhikr restores the scale: Allah is greater, nearer, more powerful, and more deserving of your attention than anything competing for your heart.',
+    sources: [
+      { type: 'Hadith', ref: 'Sahih Muslim 597', authenticity: 'Authentic' },
+      { type: "Qur'an", ref: 'Surah Al-Isra 17:111', authenticity: "Direct from Qur'an" },
+    ],
+    guidance:
+      'Use this dhikr when fear becomes loud, when blessings amaze you, and when you need to return your attention from the size of creation to the greatness of the Creator.',
+  },
+  'la-ilaha-illallah': {
+    slug: 'la-ilaha-illallah',
+    category: 'Dhikr & Tawhid',
+    title: 'La Ilaha Illallah — The Word of Oneness',
+    arabic: 'لَا إِلَٰهَ إِلَّا اللَّهُ',
+    transliteration: 'Lā ilāha illallāh',
+    translation: 'There is no deity except Allah.',
+    story:
+      'This is the foundation of Islam and the root of all remembrance. Every act of worship, every dua, and every hope in Allah grows from this truth: no one is worthy of worship except Him.',
+    reflection:
+      'La ilaha illallah is not only a statement of belief; it is a liberation. It releases the heart from worshiping approval, fear, wealth, status, desire, or people.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Muhammad 47:19', authenticity: "Direct from Qur'an" },
+      { type: 'Hadith', ref: 'Sunan at-Tirmidhi 3383', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Repeat it with presence when you want to renew faith, fight attachment, or return your heart to the One who alone deserves worship.',
+  },
+  'astaghfirullah': {
+    slug: 'astaghfirullah',
+    category: 'Dhikr & Repentance',
+    title: 'Astaghfirullah — I Seek Allah’s Forgiveness',
+    arabic: 'أَسْتَغْفِرُ اللَّهَ',
+    transliteration: 'Astaghfirullāh',
+    translation: 'I seek forgiveness from Allah.',
+    story:
+      'Istighfar is the believer\'s constant return. The Prophet ﷺ, though forgiven, sought Allah\'s forgiveness repeatedly, teaching the ummah that repentance is not only for moments of collapse but part of a living relationship with Allah.',
+    reflection:
+      'Astaghfirullah is hope in one word. It refuses despair and refuses arrogance at the same time. You admit the wound, but you bring it to the One whose mercy is greater than your sin.',
+    sources: [
+      { type: "Qur'an", ref: 'Surah Nuh 71:10', authenticity: "Direct from Qur'an" },
+      { type: 'Hadith', ref: 'Sahih Muslim 2702', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Use it after sins, after heedlessness, after worship, and throughout the day. Let it be a soft turning back before the heart becomes hard.',
+  },
+  'la-hawla-wa-la-quwwata': {
+    slug: 'la-hawla-wa-la-quwwata',
+    category: 'Dhikr & Reliance',
+    title: 'La Hawla Wa La Quwwata Illa Billah — Strength Is Only with Allah',
+    arabic: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',
+    transliteration: 'Lā ḥawla wa lā quwwata illā billāh',
+    translation: 'There is no power and no strength except with Allah.',
+    story:
+      'The Prophet ﷺ described this remembrance as a treasure from the treasures of Paradise. It teaches that no movement away from sin and no strength to obey Allah happens except by Allah\'s help.',
+    reflection:
+      'This dhikr is spiritual surrender without passivity. You still act, plan, work, apologize, seek help, and try again — but you stop pretending that your strength is self-produced.',
+    sources: [
+      { type: 'Hadith', ref: 'Sahih Bukhari 6384, Sahih Muslim 2704', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Say it when a matter feels too heavy, when obedience feels difficult, when avoiding sin feels hard, or when you need to remember that every real strength comes from Allah.',
+  },
+  'subhanallahi-wa-bihamdihi-subhanallahil-adheem': {
+    slug: 'subhanallahi-wa-bihamdihi-subhanallahil-adheem',
+    category: 'Dhikr & Praise',
+    title: 'Beloved Words — Light on the Tongue, Heavy on the Scale',
+    arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ',
+    transliteration: 'SubḥānAllāhi wa biḥamdihi, SubḥānAllāhil-ʿAẓīm',
+    translation: 'Glory is to Allah and praise is to Him; glory is to Allah, the Most Great.',
+    story:
+      'The Prophet ﷺ described these two phrases as light on the tongue, heavy on the scale, and beloved to the Most Merciful. They combine Allah\'s perfection, praise, and greatness in words simple enough to carry through the day.',
+    reflection:
+      'Some acts of worship are heavy because they require time, strength, or privacy. This dhikr is a mercy for ordinary moments. It teaches that the scale of the Hereafter is filled not only by dramatic deeds, but by sincere words repeated with love and awareness.',
+    sources: [
+      { type: 'Hadith', ref: 'Sahih Bukhari 6682, Sahih Muslim 2694', authenticity: 'Authentic' },
+    ],
+    guidance:
+      'Repeat it during commutes, pauses, chores, or quiet moments. Let its ease encourage consistency rather than carelessness.',
+  },
   'tahlil-complete': {
     slug: 'tahlil-complete',
     category: 'Remembrance & Gratitude',
