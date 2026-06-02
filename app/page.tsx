@@ -12,20 +12,49 @@ const themes = [
   'Relief', 'Divine mercy', 'Repentance', 'Gratitude',
 ]
 
-const duaEntries = allDuas.filter((entry) => entry.category !== 'The 6 Kalimas' && !entry.category.startsWith('Dhikr'))
-const dhikrEntries = allDuas.filter((entry) => entry.category.startsWith('Dhikr'))
-const kalimaEntries = allDuas.filter((entry) => entry.category === 'The 6 Kalimas')
-const featuredDuas = duaEntries.slice(0, 3)
+const paths = [
+  {
+    label: 'Dua',
+    heading: 'Calling Allah directly',
+    description:
+      'Dua is a personal call to Allah with need, trust, and honesty. It teaches dependence, softens anxiety, and keeps the heart connected in both ease and hardship.',
+    tip: 'Start slowly: read the Arabic once, then transliteration, then translation. Pause after each line.',
+    slugs: ['dua-of-ayyub', 'dua-of-yunus', 'dua-for-anxiety'],
+  },
+  {
+    label: 'Dhikr',
+    heading: 'Remembering Allah often',
+    description:
+      'Dhikr means remembering Allah by phrases of praise, glorification, and surrender. It steadies the mind, reorders priorities, and gives daily spiritual grounding.',
+    tip: 'Choose one phrase, repeat with attention and presence, and let meaning settle before increasing quantity.',
+    slugs: ['subhanallah', 'alhamdulillah', 'allahu-akbar'],
+  },
+  {
+    label: 'Kalima',
+    heading: 'Foundations of belief',
+    description:
+      'The Kalimas summarise core beliefs: tawhid, testimony, glorification, repentance, and protection from disbelief. They help anchor identity and direction.',
+    tip: 'Understand each phrase first, then repeat with conviction. Let each kalima become a lens for daily conduct.',
+    slugs: ['kalima-tayyab', 'kalima-shahadat', 'kalima-tamjeed'],
+  },
+]
+
+// Featured: first 3 non-Kalima, non-Dhikr duas
+const featured = allDuas
+  .filter((d) => !d.category.includes('Kalima') && !d.category.includes('Dhikr'))
+  .slice(0, 3)
 
 export default function HomePage() {
+  const duaMap = Object.fromEntries(allDuas.map((d) => [d.slug, d]))
+
   return (
     <div className="min-h-screen bg-[#f8f1e7] dark:bg-[#0a0f0d] text-stone-800 dark:text-stone-100">
 
       {/* Nav */}
       <nav className="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-semibold tracking-tight text-stone-900 dark:text-stone-100 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
+        <span className="text-2xl font-semibold tracking-tight text-stone-900 dark:text-stone-100">
           Uns
-        </Link>
+        </span>
         <Link
           href="/duas"
           className="text-sm text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
@@ -84,18 +113,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Dua cards */}
-      <section className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-2xl font-serif text-stone-900 dark:text-stone-100 mb-2">Featured duas</h2>
+      {/* Featured duas */}
+      <section className="max-w-5xl mx-auto px-6 py-16 border-b border-stone-200 dark:border-stone-800">
+        <h2 className="text-2xl font-serif text-stone-900 dark:text-stone-100 mb-2">
+          Featured duas
+        </h2>
         <p className="text-stone-500 dark:text-stone-500 text-sm mb-8">
           Three starting points for difficult days.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {featuredDuas.map((dua, i) => (
+          {featured.map((dua, i) => (
             <Link
               key={dua.slug}
               href={`/duas/${dua.slug}`}
-              className={`group block bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 rounded-2xl p-7 hover:border-emerald-200 dark:hover:border-emerald-900 hover:shadow-sm transition-all animate-slide-up stagger-${Math.min(i + 1, 6)}`}
+              className={`group block bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 rounded-2xl p-7 hover:border-emerald-200 dark:hover:border-emerald-900 hover:shadow-sm transition-all animate-slide-up stagger-${i + 1}`}
             >
               <span className="text-xs text-emerald-700 dark:text-emerald-500 font-medium tracking-wide uppercase">
                 {dua.category}
@@ -121,68 +152,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Learning paths */}
-      <section id="paths" className="max-w-5xl mx-auto px-6 pb-20">
-        <div className="grid gap-6 md:grid-cols-3">
-          <article className="rounded-3xl border border-stone-100 bg-white p-7 dark:border-stone-800 dark:bg-stone-900">
-            <p className="text-xs uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">Dua</p>
-            <h2 className="mt-2 text-2xl font-serif">Calling Allah directly</h2>
-            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
-              Dua is a personal call to Allah with need, trust, and honesty. It teaches dependence, softens anxiety,
-              and keeps the heart connected in both ease and hardship.
-            </p>
-            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
-              Start slowly: read the Arabic once, then transliteration, then translation. Pause after each line and ask,
-              &ldquo;What is this teaching my heart right now?&rdquo;
-            </p>
-            <div className="mt-5 space-y-2 text-sm">
-              {duaEntries.slice(0, 3).map((entry) => (
-                <Link key={entry.slug} href={`/duas/${entry.slug}`} className="block text-emerald-700 transition-colors hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300">
-                  {entry.title}
-                </Link>
-              ))}
-            </div>
-          </article>
-
-          <article className="rounded-3xl border border-stone-100 bg-white p-7 dark:border-stone-800 dark:bg-stone-900">
-            <p className="text-xs uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">Dhikr</p>
-            <h2 className="mt-2 text-2xl font-serif">Remembering Allah often</h2>
-            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
-              Dhikr means remembering Allah by phrases of praise, glorification, and surrender. It steadies the mind,
-              reorders priorities, and gives daily spiritual grounding.
-            </p>
-            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
-              Keep it consistent: choose one phrase, repeat with attention and presence, and let meaning settle before
-              increasing quantity.
-            </p>
-            <div className="mt-5 space-y-2 text-sm">
-              {dhikrEntries.slice(0, 3).map((entry) => (
-                <Link key={entry.slug} href={`/duas/${entry.slug}`} className="block text-emerald-700 transition-colors hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300">
-                  {entry.title}
-                </Link>
-              ))}
-            </div>
-          </article>
-
-          <article className="rounded-3xl border border-stone-100 bg-white p-7 dark:border-stone-800 dark:bg-stone-900">
-            <p className="text-xs uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">Kalima</p>
-            <h2 className="mt-2 text-2xl font-serif">Foundations of belief</h2>
-            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
-              The Kalimas summarize core beliefs: tawhid, testimony, glorification, repentance, and protection from
-              disbelief. They help anchor identity and direction.
-            </p>
-            <p className="mt-3 text-sm leading-7 text-stone-600 dark:text-stone-300">
-              Read with reverence: understand each phrase first, then repeat with conviction. Let each kalima become a
-              lens for speech, decisions, and daily conduct.
-            </p>
-            <div className="mt-5 space-y-2 text-sm">
-              {kalimaEntries.slice(0, 3).map((entry) => (
-                <Link key={entry.slug} href={`/duas/${entry.slug}`} className="block text-emerald-700 transition-colors hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300">
-                  {entry.title}
-                </Link>
-              ))}
-            </div>
-          </article>
+      {/* Paths — Dua / Dhikr / Kalima */}
+      <section id="paths" className="max-w-5xl mx-auto px-6 py-16">
+        <h2 className="text-2xl font-serif text-stone-900 dark:text-stone-100 mb-2">
+          Three paths of remembrance
+        </h2>
+        <p className="text-stone-500 dark:text-stone-500 text-sm mb-10">
+          Each has its own character and its own reward.
+        </p>
+        <div className="space-y-6">
+          {paths.map((path) => {
+            const linkedDuas = path.slugs.map((s) => duaMap[s]).filter(Boolean)
+            return (
+              <div
+                key={path.label}
+                className="bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 rounded-3xl p-8 md:p-10"
+              >
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div>
+                    <span className="text-xs text-emerald-700 dark:text-emerald-500 font-medium tracking-[0.15em] uppercase">
+                      {path.label}
+                    </span>
+                    <h3 className="text-xl font-serif text-stone-900 dark:text-stone-100 mt-1">
+                      {path.heading}
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-stone-600 dark:text-stone-400 leading-relaxed mb-3">
+                  {path.description}
+                </p>
+                <p className="text-sm text-stone-400 dark:text-stone-500 italic mb-6">
+                  {path.tip}
+                </p>
+                <div className="space-y-2">
+                  {linkedDuas.map((dua) => (
+                    <Link
+                      key={dua.slug}
+                      href={`/duas/${dua.slug}`}
+                      className="group flex items-center justify-between rounded-xl border border-stone-100 dark:border-stone-800 px-5 py-3 hover:border-emerald-200 dark:hover:border-emerald-900 transition-all"
+                    >
+                      <span className="text-sm font-medium text-stone-700 dark:text-stone-300 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                        {dua.title}
+                      </span>
+                      <span className="text-stone-300 dark:text-stone-600 group-hover:text-emerald-400 transition-colors text-sm">→</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
         </div>
       </section>
 
