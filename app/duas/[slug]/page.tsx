@@ -5,6 +5,7 @@ import { ArrowLeft, BookOpen, Heart, Shield, Compass } from 'lucide-react'
 import { getDua, allDuas, duasData } from '@/lib/duas'
 import ShareButton from '@/components/ShareButton'
 import BookmarkButton from '@/components/BookmarkButton'
+import AudioRecitationButton from '@/components/AudioRecitationButton'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -82,6 +83,7 @@ export default async function DuaPage({ params }: Props) {
           >
             {dua.arabic}
           </p>
+          <AudioRecitationButton arabic={dua.arabic} />
         </section>
 
         {/* Transliteration + Translation */}
