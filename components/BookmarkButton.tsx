@@ -17,16 +17,19 @@ function readBookmarks(): string[] {
   }
 }
 
-function writeBookmarks(bookmarks: string[]): void {
+function writeBookmarks(bookmarks: string[]): boolean {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(bookmarks))
+    return true
   } catch {
     // Storage can be unavailable or full in some environments.
+    return false
   }
 }
 
 export default function BookmarkButton({ slug, title }: { slug: string; title: string }) {
   const [saved, setSaved] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     setSaved(readBookmarks().includes(slug))
@@ -37,13 +40,19 @@ export default function BookmarkButton({ slug, title }: { slug: string; title: s
     const next = saved
       ? bookmarks.filter((s) => s !== slug)
       : [...bookmarks, slug]
-    writeBookmarks(next)
-    setSaved(!saved)
+    if (writeBookmarks(next)) {
+      setError(false)
+      setSaved(!saved)
+    } else {
+      setError(true)
+    }
   }
 
   return (
+    <>
     <button
       onClick={toggle}
+      aria-pressed={saved}
       className="p-2.5 hover:bg-stone-100 dark:hover:bg-stone-900 rounded-xl transition-colors"
       aria-label={saved ? 'Remove bookmark' : 'Bookmark this dua'}
     >
@@ -55,5 +64,11 @@ export default function BookmarkButton({ slug, title }: { slug: string; title: s
         }`}
       />
     </button>
+    {error && (
+      <span role="alert" className="text-xs text-red-600 dark:text-red-400 self-center">
+        Could not save — browser storage is unavailable.
+      </span>
+    )}
+    </>
   )
 }

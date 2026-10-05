@@ -77,16 +77,16 @@ export const duasData: Record<string, Dua> = {
       'Anxiety feeds on the illusion that outcomes depend entirely on us. This dua is its antidote — not by denying reality, but by locating it correctly. "He is the Lord of the Mighty Throne" means: the worst thing that could happen is still inside His dominion. Every fear, every threat, every worst-case scenario — still under the Throne. This dua does not promise ease. It promises company.',
     sources: [
       { type: "Qur'an", ref: 'Surah At-Tawbah 9:129', authenticity: "Direct from Qur'an" },
-      { type: 'Hadith', ref: 'Sahih Bukhari 6346', authenticity: 'Authentic' },
+      { type: 'Hadith', ref: 'Sunan Abu Dawud 5081 (attributed to Abu al-Darda; its grading is disputed)', authenticity: 'Disputed — verify before attributing to the Prophet ﷺ' },
     ],
     guidance:
-      'Recite seven times morning and evening, and especially when the chest tightens. The Prophet ﷺ said: "Whoever says this seven times every morning and evening, Allah will take care of whatever worries him."',
+      'Recite when the chest tightens, remembering that Allah is sufficient. Some narrations mention reciting it seven times morning and evening, but the grading of that report is disputed, so treat the count as a recommended practice rather than a confirmed Prophetic prescription.',
     tags: ['anxiety', 'fear', 'tawakkul', 'trust', 'hardship'],
   },
   'dua-of-ibrahim': {
     slug: 'dua-of-ibrahim',
     category: 'Surrender & Tawakkul',
-    title: 'Dua of Ibrahim — Complete Surrender',
+    title: 'Dua of the Believer of Pharaoh’s Court — Complete Surrender',
     arabic: 'وَأُفَوِّضُ أَمْرِي إِلَى اللَّهِ إِنَّ اللَّهَ بَصِيرٌ بِالْعِبَادِ',
     transliteration: "Wa ufawwiḍu amrī ilallāh innallāha baṣīrun bil-'ibād",
     translation:
@@ -107,14 +107,14 @@ export const duasData: Record<string, Dua> = {
     category: 'Overwhelm & Exhaustion',
     title: 'Rabbi Inni Maghloob — I Am Overpowered',
     arabic: 'رَبِّ إِنِّي مَغْلُوبٌ فَانتَصِرْ',
-    transliteration: 'Rabbi innī maghglūbun fantasir',
+    transliteration: 'Rabbi innī maghlūbun fantaṣir',
     translation: 'My Lord, I am overpowered — so help me.',
     story:
       "Prophet Nuh (Noah) عليه السلام called his people to Allah for 950 years. He was mocked, threatened, ignored. His own son refused him. When he had truly exhausted every effort — every argument, every approach, every degree of patience — he finally called to Allah: I am overwhelmed. Help me. And the response came.",
     reflection:
       'There is permission in this dua. Permission to admit you are exhausted. Permission to say: I have given everything I have, and it is not enough. There is no shame in this admission — Nuh عليه السلام made it after nearly a millennium of effort. Admitting we are overpowered is not defeat. It is the moment we finally stop carrying what was never ours to carry alone.',
     sources: [
-      { type: "Qur'an", ref: 'Surah Al-Qamar 54:10', authenticity: "Direct from Qur'an" },
+      { type: "Qur'an", ref: 'Surah Al-Qamar 54:10 (adapted as a direct supplication)', authenticity: "Adapted from Qur'an — the verse reports Nuh's words as “anni maghlubun fantasir”" },
     ],
     guidance:
       'Use this dua when you are at the end of yourself — emotionally, spiritually, physically. It is specifically for the moments when human effort has reached its limit.',
@@ -380,15 +380,15 @@ export const duasData: Record<string, Dua> = {
     translation:
       'There is none worthy of worship except Allah. He is One, without partner. His is the kingdom and His is the praise. He gives life and causes death. He is alive and will never die, ever, ever. Possessor of Majesty and Honour. In His hands is all goodness. And He has power over all things.',
     story:
-      'This Kalima is an expanded declaration of tawhid — the Oneness of Allah — and closely mirrors the wording the Prophet ﷺ recommended as the best dhikr. It covers every essential attribute: His uniqueness, His sovereignty, His worthiness of praise, His control over life and death, His eternal living nature, His majesty, His goodness, and His absolute power. Nothing is outside its scope.',
+      'This Kalima is an expanded declaration of tawhid — the Oneness of Allah — and draws on the tahlil the Prophet ﷺ taught, in an expanded traditional form. It covers every essential attribute: His uniqueness, His sovereignty, His worthiness of praise, His control over life and death, His eternal living nature, His majesty, His goodness, and His absolute power. Nothing is outside its scope.',
     reflection:
       '"He gives life and causes death" — this line sits in the middle of the declaration not by accident. Every human fear ultimately traces back to death and what precedes it: loss, illness, powerlessness. This Kalima looks that fear in the face and responds: the One who causes death is the same One who is praised, who is living and will never die, who holds all goodness in His hand. There is nowhere to run from Him — and nowhere safer to be than in full surrender to Him.',
     sources: [
-      { type: 'Hadith', ref: 'Sahih Muslim 2693', authenticity: 'Authentic' },
-      { type: 'Hadith', ref: 'Sahih Bukhari 6404', authenticity: 'Authentic' },
+      { type: 'Hadith', ref: 'Sahih Muslim 2693 (shorter tahlil)', authenticity: 'Authentic (for the shorter wording only)' },
+      { type: 'Hadith', ref: 'Sahih Bukhari 6404 (ten-repetition reward)', authenticity: 'Authentic (for the shorter wording only)' },
     ],
     guidance:
-      'Recite this after Fajr and Maghrib prayers, and especially at times when the reality of mortality feels close. The Prophet ﷺ said these words erase sins even if they are as numerous as the foam of the sea.',
+      'This expanded wording is a traditional educational compilation, not a single verbatim Prophetic report. Recite it at times when the reality of mortality feels close. The sources above support the shorter tahlil and its reward; specific timings and the sea-foam forgiveness claim are not established by them.',
     tags: ['kalima', 'tawhid', 'faith', 'mortality'],
   },
 
@@ -442,5 +442,5 @@ export const duasData: Record<string, Dua> = {
 export const allDuas: Dua[] = Object.values(duasData)
 
 export function getDua(slug: string): Dua | null {
-  return duasData[slug] ?? null
+  return Object.hasOwn(duasData, slug) ? duasData[slug] : null
 }

@@ -3,20 +3,31 @@
 import { Volume2, VolumeX, Loader2 } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
-type Status = 'idle' | 'loading' | 'playing' | 'unsupported'
+type Status = 'idle' | 'loading' | 'playing' | 'unsupported' | 'error'
 
 export default function AudioRecitationButton({ arabic }: { arabic: string }) {
   const [status, setStatus] = useState<Status>('idle')
+  const [hasArabicVoice, setHasArabicVoice] = useState(true)
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null)
 
   useEffect(() => {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
       setStatus('unsupported')
+      return
     }
-    return () => {
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-        window.speechSynthesis.cancel()
+    const synth = window.speechSynthesis
+    const updateVoices = () => {
+      const voices = synth.getVoices()
+      // Voices may load lazily; an empty list means "not known yet", not "none".
+      if (voices.length > 0) {
+        setHasArabicVoice(voices.some((v) => v.lang.toLowerCase().startsWith('ar')))
       }
+    }
+    updateVoices()
+    synth.addEventListener?.('voiceschanged', updateVoices)
+    return () => {
+      synth.removeEventListener?.('voiceschanged', updateVoices)
+      synth.cancel()
     }
   }, [])
 
@@ -28,6 +39,10 @@ export default function AudioRecitationButton({ arabic }: { arabic: string }) {
     }
 
     if (status === 'unsupported') return
+    if (!hasArabicVoice) {
+      setStatus('error')
+      return
+    }
 
     const utterance = new SpeechSynthesisUtterance(arabic)
     utterance.lang = 'ar-SA'
@@ -35,7 +50,7 @@ export default function AudioRecitationButton({ arabic }: { arabic: string }) {
 
     utterance.onstart = () => setStatus('playing')
     utterance.onend = () => setStatus('idle')
-    utterance.onerror = () => setStatus('idle')
+    utterance.onerror = (e) => setStatus(e.error === 'canceled' || e.error === 'interrupted' ? 'idle' : 'error')
 
     utteranceRef.current = utterance
     setStatus('loading')
@@ -45,6 +60,7 @@ export default function AudioRecitationButton({ arabic }: { arabic: string }) {
   if (status === 'unsupported') return null
 
   return (
+    <>
     <button
       onClick={handleClick}
       className="mt-8 flex items-center gap-2 px-5 py-2.5 text-sm text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-950/50 transition-colors mx-auto"
@@ -52,10 +68,17 @@ export default function AudioRecitationButton({ arabic }: { arabic: string }) {
     >
       {status === 'loading' && <Loader2 className="w-4 h-4 animate-spin" />}
       {status === 'playing' && <VolumeX className="w-4 h-4" />}
-      {status === 'idle' && <Volume2 className="w-4 h-4" />}
+      {(status === 'idle' || status === 'error') && <Volume2 className="w-4 h-4" />}
       <span>
         {status === 'playing' ? 'Stop' : status === 'loading' ? 'Loading…' : 'Listen'}
       </span>
     </button>
+    {status === 'error' && (
+      <p role="alert" className="mt-3 text-center text-xs text-stone-500 dark:text-stone-400">
+        Arabic speech isn&apos;t available on this device or browser. This is browser-generated
+        speech, not a recorded reciter.
+      </p>
+    )}
+    </>
   )
 }

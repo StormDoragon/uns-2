@@ -141,5 +141,5 @@ export const situationsData: Record<string, Situation> = {
 export const allSituations: Situation[] = Object.values(situationsData)
 
 export function getSituation(slug: string): Situation | null {
-  return situationsData[slug] ?? null
+  return Object.hasOwn(situationsData, slug) ? situationsData[slug] : null
 }

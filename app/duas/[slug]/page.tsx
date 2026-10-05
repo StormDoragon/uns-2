@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Heart, Shield, Compass } from 'lucide-react'
 import { getDua, allDuas, duasData } from '@/lib/duas'
+import { getSituation } from '@/lib/situations'
 import ShareButton from '@/components/ShareButton'
 import BookmarkButton from '@/components/BookmarkButton'
 import AudioRecitationButton from '@/components/AudioRecitationButton'
@@ -26,6 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: dua.title,
       description: dua.translation,
       type: 'article',
+      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: dua.title,
+      description: dua.translation,
+      images: ['/opengraph-image'],
     },
   }
 }
@@ -112,15 +120,24 @@ export default async function DuaPage({ params }: Props) {
         {/* Tags */}
         {dua.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-10 animate-fade-in">
-            {dua.tags.map((tag) => (
-              <Link
-                key={tag}
-                href={`/situations/${tag}`}
-                className="px-3 py-1.5 rounded-full border border-stone-200 dark:border-stone-700 text-xs text-stone-500 dark:text-stone-400 hover:border-emerald-300 dark:hover:border-emerald-700 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors capitalize"
-              >
-                {tag}
-              </Link>
-            ))}
+            {dua.tags.map((tag) =>
+              getSituation(tag) ? (
+                <Link
+                  key={tag}
+                  href={`/situations/${tag}`}
+                  className="px-3 py-1.5 rounded-full border border-stone-200 dark:border-stone-700 text-xs text-stone-500 dark:text-stone-400 hover:border-emerald-300 dark:hover:border-emerald-700 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors capitalize"
+                >
+                  {tag}
+                </Link>
+              ) : (
+                <span
+                  key={tag}
+                  className="px-3 py-1.5 rounded-full border border-stone-200 dark:border-stone-700 text-xs text-stone-500 dark:text-stone-400 capitalize"
+                >
+                  {tag}
+                </span>
+              )
+            )}
           </div>
         )}
 
