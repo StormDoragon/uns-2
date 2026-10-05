@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { allDuas } from '@/lib/duas'
 import { allSituations } from '@/lib/situations'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Uns — A Resting Place for Tired Hearts',
@@ -50,6 +51,12 @@ export default function HomePage() {
           Uns
         </span>
         <div className="flex items-center gap-6">
+          <Link
+            href="/today"
+            className="text-sm text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+          >
+            Today
+          </Link>
           <Link
             href="/situations"
             className="text-sm text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
@@ -147,13 +154,13 @@ export default function HomePage() {
                 lang="ar"
                 dir="rtl"
               >
-                {dua.arabic.split(' ').slice(0, 5).join(' ')}\u2026
+                {dua.arabic.split(' ').slice(0, 5).join(' ')}…
               </p>
               <p className="text-sm text-stone-500 dark:text-stone-500 leading-relaxed line-clamp-2">
                 {dua.translation}
               </p>
               <p className="mt-4 text-xs text-stone-400 dark:text-stone-600 group-hover:text-emerald-600 dark:group-hover:text-emerald-500 transition-colors">
-                Read more \u2192
+                Read more →
               </p>
             </Link>
           ))}
@@ -202,7 +209,7 @@ export default function HomePage() {
                       <span className="text-sm font-medium text-stone-700 dark:text-stone-300 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                         {dua.title}
                       </span>
-                      <span className="text-stone-300 dark:text-stone-600 group-hover:text-emerald-400 transition-colors text-sm">\u2192</span>
+                      <span className="text-stone-300 dark:text-stone-600 group-hover:text-emerald-400 transition-colors text-sm">→</span>
                     </Link>
                   ))}
                 </div>
@@ -212,9 +219,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="text-center py-10 text-sm text-stone-400 border-t border-stone-200 dark:border-stone-800">
-        <p>Uns \u2014 Not a database. A companion for return.</p>
-      </footer>
+      <Footer />
     </div>
   )
 }

@@ -18,6 +18,9 @@ app/
   globals.css           — Tailwind base, Arabic rendering, animations
   page.tsx              — Home page (/)
   not-found.tsx         — 404 page
+  today/page.tsx        — Dua of the day (/today)
+  support/page.tsx      — Support Uns (/support)
+  sitemap.ts, robots.ts, manifest.ts, icon.tsx, opengraph-image.tsx — SEO, PWA, share cards
   duas/
     page.tsx            — All duas index (/duas)
     [slug]/
@@ -28,6 +31,18 @@ app/duas/[slug]/
 lib/
   duas.ts               — All dua data + getDua / allDuas helpers
 ```
+
+## Roadmap
+
+See [docs/PLAN.md](docs/PLAN.md) for the goal, launch plan, and monetization strategy.
+
+## Environment variables (all optional)
+
+| Variable | Purpose |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Canonical origin for sitemap, OG tags, JSON-LD (default `https://uns-2.vercel.app`) |
+| `NEXT_PUBLIC_SUPPORT_URL` | Donation/sadaqah link; shows a button on `/support` when set |
+| `NEXT_PUBLIC_NEWSLETTER_URL` | Newsletter signup link; shows a button on `/support` when set |
 
 ## Local development
 

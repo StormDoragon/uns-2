@@ -1,4 +1,6 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+import { Analytics } from '@vercel/analytics/next'
+import { SITE_URL } from '@/lib/site'
 import { Amiri, Inter } from 'next/font/google'
 import './globals.css'
 
@@ -22,20 +24,27 @@ export const metadata: Metadata = {
   },
   description:
     'Uns is a resting place for tired hearts: authentic duas with meaning, context, and reflection.',
-  metadataBase: new URL('https://uns-2.vercel.app'),
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: '/' },
   openGraph: {
     title: 'Uns — A Resting Place for Tired Hearts',
     description:
       'Authentic duas for hardship, illness, surrender, and divine mercy — with story, reflection, and guidance.',
-    images: [{ url: '/og.jpg', width: 1200, height: 630 }],
+    siteName: 'Uns',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Uns — A Resting Place for Tired Hearts',
     description: 'Authentic duas for hardship, illness, surrender, and divine mercy.',
-    images: ['/og.jpg'],
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f8f1e7' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0f0d' },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -43,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${amiri.variable} antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   )

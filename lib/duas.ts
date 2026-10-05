@@ -444,3 +444,23 @@ export const allDuas: Dua[] = Object.values(duasData)
 export function getDua(slug: string): Dua | null {
   return duasData[slug] ?? null
 }
+
+/** Deterministic "dua of the day": same dua for everyone on a given UTC date. */
+export function duaOfTheDay(date: Date = new Date()): Dua {
+  const pool = allDuas.filter((d) => !d.category.includes('Kalima'))
+  const dayNumber = Math.floor(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()) / 86_400_000)
+  return pool[dayNumber % pool.length]
+}
+
+/** Related duas ranked by shared tags, then same category; never includes the dua itself. */
+export function relatedDuas(dua: Dua, limit = 3): Dua[] {
+  return allDuas
+    .filter((d) => d.slug !== dua.slug)
+    .map((d) => ({
+      d,
+      score: d.tags.filter((t) => dua.tags.includes(t)).length * 2 + (d.category === dua.category ? 1 : 0),
+    }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((x) => x.d)
+}

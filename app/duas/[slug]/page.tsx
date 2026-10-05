@@ -2,7 +2,10 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Heart, Shield, Compass } from 'lucide-react'
-import { getDua, allDuas, duasData } from '@/lib/duas'
+import { getDua, duasData, relatedDuas } from '@/lib/duas'
+import { getSituation } from '@/lib/situations'
+import { SITE_URL } from '@/lib/site'
+import Footer from '@/components/Footer'
 import ShareButton from '@/components/ShareButton'
 import BookmarkButton from '@/components/BookmarkButton'
 import AudioRecitationButton from '@/components/AudioRecitationButton'
@@ -27,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: dua.translation,
       type: 'article',
     },
+    alternates: { canonical: `/duas/${dua.slug}` },
   }
 }
 
@@ -35,12 +39,22 @@ export default async function DuaPage({ params }: Props) {
   const dua = getDua(slug)
   if (!dua) notFound()
 
-  const related = allDuas
-    .filter((d) => d.slug !== dua.slug)
-    .slice(0, 3)
+  const related = relatedDuas(dua)
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: dua.title,
+    description: dua.translation,
+    url: `${SITE_URL}/duas/${dua.slug}`,
+    inLanguage: 'en',
+    articleSection: dua.category,
+    keywords: dua.tags.join(', '),
+    publisher: { '@type': 'Organization', name: 'Uns', url: SITE_URL },
+  }
 
   return (
     <div className="min-h-screen bg-[#f8f1e7] dark:bg-[#0a0f0d] text-stone-800 dark:text-stone-100">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
 
       {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-stone-200/80 dark:border-stone-800 bg-white/90 dark:bg-black/85 backdrop-blur-md">
@@ -112,15 +126,24 @@ export default async function DuaPage({ params }: Props) {
         {/* Tags */}
         {dua.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-10 animate-fade-in">
-            {dua.tags.map((tag) => (
-              <Link
-                key={tag}
-                href={`/situations/${tag}`}
-                className="px-3 py-1.5 rounded-full border border-stone-200 dark:border-stone-700 text-xs text-stone-500 dark:text-stone-400 hover:border-emerald-300 dark:hover:border-emerald-700 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors capitalize"
-              >
-                {tag}
-              </Link>
-            ))}
+            {dua.tags.map((tag) =>
+              getSituation(tag) ? (
+                <Link
+                  key={tag}
+                  href={`/situations/${tag}`}
+                  className="px-3 py-1.5 rounded-full border border-stone-200 dark:border-stone-700 text-xs text-stone-500 dark:text-stone-400 hover:border-emerald-300 dark:hover:border-emerald-700 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors capitalize"
+                >
+                  {tag}
+                </Link>
+              ) : (
+                <span
+                  key={tag}
+                  className="px-3 py-1.5 rounded-full border border-stone-100 dark:border-stone-800 text-xs text-stone-400 capitalize"
+                >
+                  {tag}
+                </span>
+              ),
+            )}
           </div>
         )}
 
@@ -199,7 +222,7 @@ export default async function DuaPage({ params }: Props) {
         {related.length > 0 && (
           <section className="animate-fade-in">
             <h2 className="text-xs uppercase tracking-[0.15em] text-stone-400 font-medium mb-4">
-              Other Duas
+              Related Duas
             </h2>
             <div className="space-y-2">
               {related.map((r) => (
@@ -226,9 +249,7 @@ export default async function DuaPage({ params }: Props) {
         )}
       </main>
 
-      <footer className="text-center py-12 text-sm text-stone-400 border-t border-stone-200 dark:border-stone-800">
-        May Allah accept every call you make to Him.
-      </footer>
+      <Footer note="May Allah accept every call you make to Him." />
     </div>
   )
 }
